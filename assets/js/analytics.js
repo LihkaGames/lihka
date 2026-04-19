@@ -2,7 +2,7 @@
 // LIHKA.IN - Analytics Tracking System
 // ============================================
 
-const ANALYTICS_URL = 'https://script.google.com/macros/s/AKfycbz7Kmre78X3sZxoaQ2C3LrILRfsVQrg6pdK1DWeAjamonmx4MeVxI22fEJYiwesubp2Lw/exec';
+const ANALYTICS_URL = 'https://script.google.com/macros/s/AKfycbzXdAXXbOH73Kk6CGxPLRyc4ikWkYEFQscP2_Vfn01f1C6OFhJQEKv1KtXUyrG9w0EV_w/exec';
 
 // ============================================
 // GET VISITOR LOCATION
