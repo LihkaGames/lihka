@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Applications - Lihka Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+        <style>
+        /* ===== BIG LOGO STYLES ===== */
+        .hdr-logo {
+            font-size: 1.8rem !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px;
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #0f0 !important;
+            -webkit-text-fill-color: #0f0 !important;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        .hdr-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .hdr-logo i {
+            font-style: normal;
+            font-size: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #0f0, #0a0);
+            border-radius: 14px;
+            -webkit-text-fill-color: initial;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        /* Footer logo override */
+        .ftr-brand .hdr-logo {
+            font-size: 1.5rem !important;
+        }
+
+        .ftr-brand .hdr-logo i {
+            font-size: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hdr-logo {
+                font-size: 1.4rem !important;
+            }
+
+            .hdr-logo i {
+                font-size: 1.8rem;
+                width: 42px;
+                height: 42px;
+                border-radius: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hdr-logo {
+                font-size: 1.2rem !important;
+            }
+
+            .hdr-logo i {
+                font-size: 1.5rem;
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+        }
+
+        /* ===== EXISTING STYLES ===== */
+        .dl {
+            display: inline-block;
+            padding: 8px 18px;
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 184, 148, 0.25);
+            white-space: nowrap;
+        }
+
+        .dl:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+            background: linear-gradient(135deg, #00cec9, #00b894);
+        }
+
+        .dl:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .card-ico svg,
+        .ico svg,
+        .fi svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hdr">
+        <div class="wrap">
+            <a href="index.html" class="hdr-logo"><i>&#127918;</i>Lihka Games</a>
+            <div class="hdr-search"><input placeholder="Search apps & games..." id="hs"><button>&#128270;</button></div>
+            <nav class="hdr-nav">
+                <a href="index.html" class="">Home</a>
+                <a href="apps.html" class="on">Apps</a>
+                <a href="games.html" class="">Games</a>
+            </nav>
+            <button class="menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="mob-nav"><button class="mob-close">&#10005;</button>
+        <a href="index.html">Home</a><a href="apps.html">Apps</a><a href="games.html">Games</a>
+        <a href="trending.html">Trending</a>
+        <a href="about.html">About</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="wrap">
+        <div class="pg-hdr">
+            <div class="crumb"><a href="index.html">Home</a> &rsaquo; Apps</div>
+            <h1>&#128241; Applications</h1>
+            <p>Download the best Android apps</p>
+        </div>
+    </div>
+    <section class="sec" style="padding-top:10px">
+        <div class="wrap">
+            <div class="fbar"><label>Sort:</label><select>
+                    <option>Popular</option>
+                    <option>Top Rated</option>
+                    <option>Newest</option>
+                </select></div>
+            <div class="grid">
+         <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:8px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+
+                            <!-- ═══════════════════════════════════
+         SAFE ZONE: 72x72dp centered
+         ═══════════════════════════════════ -->
+
+                            <!-- Background fill -->
+                            <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+
+                            <!-- Outer subtle ring -->
+                            <path fill="none" stroke="#1E3A5F" stroke-width="2"
+                                d="M54,54m-48,0a48,48 0,1 1,96 0a48,48 0,1 1,-96 0" />
+
+                            <!-- ═══════════════════════════════════
+         GAUGE TRACK
+         ═══════════════════════════════════ -->
+                            <path fill="none" stroke="#161D3A" stroke-width="7" stroke-linecap="round"
+                                d="M16,64 A38,38 0,1,1 92,64" />
+
+                            <!-- Segment Blue -->
+                            <path fill="none" stroke="#0066FF" stroke-width="7" stroke-linecap="round"
+                                d="M16,64 A38,38 0,0,1 28,30" />
+
+                            <!-- Segment Cyan -->
+                            <path fill="none" stroke="#00D4FF" stroke-width="7" stroke-linecap="round"
+                                d="M28,30 A38,38 0,0,1 54,16" />
+
+                            <!-- Segment Green -->
+                            <path fill="none" stroke="#00FF88" stroke-width="7" stroke-linecap="round"
+                                d="M54,16 A38,38 0,0,1 80,30" />
+
+                            <!-- Segment Orange -->
+                            <path fill="none" stroke="#FF6B35" stroke-width="7" stroke-linecap="round"
+                                d="M80,30 A38,38 0,0,1 92,64" />
+
+                            <!-- ═══════════════════════════════════
+         NEEDLE
+         ═══════════════════════════════════ -->
+                            <!-- Needle shadow/glow -->
+                            <path fill="none" stroke="#FF6B3566" stroke-width="4" stroke-linecap="round"
+                                d="M54,54 L78,30" />
+
+                            <!-- Needle -->
+                            <path fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"
+                                d="M54,54 L78,30" />
+
+                            <!-- Needle tip -->
+                            <path fill="#FF6B35" d="M78,30m-3.5,0a3.5,3.5 0,1 1,7 0a3.5,3.5 0,1 1,-7 0" />
+
+                            <!-- ═══════════════════════════════════
+         CENTER HUB
+         ═══════════════════════════════════ -->
+                            <path fill="#0A0E27" stroke="#00D4FF" stroke-width="2"
+                                d="M54,54m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0" />
+
+                            <path fill="#00D4FF" d="M54,54m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
+
+                            <path fill="#FFFFFF" d="M54,54m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+
+                            <!-- ═══════════════════════════════════
+         SIGNAL BARS
+         ═══════════════════════════════════ -->
+                            <path fill="#00D4FF" fill-opacity="0.5" d="M22,76 L25,76 L25,82 L22,82 Z" />
+                            <path fill="#00D4FF" fill-opacity="0.65" d="M27,73 L30,73 L30,82 L27,82 Z" />
+                            <path fill="#00D4FF" fill-opacity="0.8" d="M32,69 L35,69 L35,82 L32,82 Z" />
+                            <path fill="#00D4FF" d="M37,65 L40,65 L40,82 L37,82 Z" />
+
+                            <!-- ═══════════════════════════════════
+         PING WAVE
+         ═══════════════════════════════════ -->
+                            <path fill="none" stroke="#00FF88" stroke-width="2" stroke-linecap="round"
+                                stroke-opacity="0.5" d="M72,76 Q76,70 80,76" />
+                            <path fill="none" stroke="#00FF88" stroke-width="2" stroke-linecap="round"
+                                stroke-opacity="0.8" d="M68,80 Q74,71 80,80" />
+                            <path fill="#00FF88" d="M76,76m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+                        </svg>
+                    </div>
+                    <h3>Signal Test Speed & Ping</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>15 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Signal-Test-Speed-Ping-App/releases/download/v1.0.0/Signal.Test.Speed.Ping.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">&#128221;</div>
+                    <h3>CloudNote Plus</h3>
+                    <div class="sub">ProductivityPro</div>
+                    <div class="meta"><b>&#11088; 4.6</b><span>28 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#f5576c,#ff9a9e)">&#128170;</div>
+                    <h3>FitTrack Health</h3>
+                    <div class="sub">HealthTech</div>
+                    <div class="meta"><b>&#11088; 4.3</b><span>42 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#a855f7,#6366f1)">&#127925;</div>
+                    <h3>MusicBox Stream</h3>
+                    <div class="sub">SoundWave</div>
+                    <div class="meta"><b>&#11088; 4.5</b><span>55 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#89f7fe,#66a6ff)">&#9925;</div>
+                    <h3>WeatherNow</h3>
+                    <div class="sub">ClimaTech</div>
+                    <div class="meta"><b>&#11088; 4.2</b><span>22 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#ffecd2,#fcb69f)">&#128193;</div>
+                    <h3>FileManager</h3>
+                    <div class="sub">ToolBox Inc</div>
+                    <div class="meta"><b>&#11088; 4.1</b><span>15 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#ff0844,#ffb199)">&#127916;</div>
+                    <h3>VideoMaker</h3>
+                    <div class="sub">CreativeApps</div>
+                    <div class="meta"><b>&#11088; 4.6</b><span>68 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+                <div class="card" data-go="app-detail.html">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#667eea,#764ba2)">&#128172;</div>
+                    <h3>Social Connect</h3>
+                    <div class="sub">NetSphere</div>
+                    <div class="meta"><b>&#11088; 4.0</b><span>40 MB</span></div><a href="#" class="dl">Download</a>
+                </div>
+            </div>
+            <div class="pagi"><a href="#">&larr;</a><b>1</b><a href="#">2</a><a href="#">3</a><a href="#">&rarr;</a>
+            </div>
+        </div>
+    </section>
+    <footer class="ftr">
+        <div class="wrap">
+            <div class="ftr-grid">
+                <div class="ftr-brand"><a href="index.html" class="hdr-logo"
+                        style="font-size:1.2rem"><i>&#127918;</i>Lihka Games</a>
+                    <p>Safe and free APK downloads for Android. Verified, updated daily.</p>
+                </div>
+                <div class="ftr-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apps.html">Apps</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="trending.html">Trending</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="ftr-bot">
+                    <p>&copy; 2026 Lihka Games &bull; lihkagames@gmail.com</p>
+                    <div><a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a> &nbsp;
+                    </div>
+                </div>
+            </div>
+    </footer><button class="btt">&#8593;</button>
+    <script src="js/app.js"></script>
+    <!-- Add this before closing </body> tag -->
+<script type="module" src="js/firebase-config.js"></script>
+<script type="module" src="js/analytics.js"></script>
+<script type="module" src="/js/visitor-tracker.js"></script>
+</body>
+
+</html>

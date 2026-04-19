@@ -1,0 +1,2761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Free APK Downloads - Lihka Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===== BIG LOGO STYLES ===== */
+        .hdr-logo {
+            font-size: 1.8rem !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px;
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #0f0 !important;
+            -webkit-text-fill-color: #0f0 !important;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        .hdr-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        .hdr-logo i {
+            font-style: normal;
+            font-size: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #0f0, #0a0);
+            border-radius: 14px;
+            -webkit-text-fill-color: initial;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        /* Footer logo override */
+        .ftr-brand .hdr-logo {
+            font-size: 1.5rem !important;
+        }
+
+        .ftr-brand .hdr-logo i {
+            font-size: 2rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hdr-logo {
+                font-size: 1.4rem !important;
+            }
+
+            .hdr-logo i {
+                font-size: 1.8rem;
+                width: 42px;
+                height: 42px;
+                border-radius: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hdr-logo {
+                font-size: 1.2rem !important;
+            }
+
+            .hdr-logo i {
+                font-size: 1.5rem;
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+        }
+
+        /* ===== UNIFIED DOWNLOAD BUTTON ===== */
+        .dl,
+        .fbtn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 22px;
+            background: linear-gradient(135deg, #00c853, #00e676, #00c853);
+            background-size: 200% 200%;
+            color: #fff !important;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.3s ease, background-position 0.4s ease;
+            box-shadow: 0 3px 12px rgba(0, 200, 83, 0.3);
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            animation: btnGradientShift 3s ease infinite;
+        }
+
+        @keyframes btnGradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .dl::before,
+        .fbtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .dl:hover::before,
+        .fbtn:hover::before {
+            left: 100%;
+        }
+
+        .dl:hover,
+        .fbtn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 200, 83, 0.45), 0 0 15px rgba(0, 230, 118, 0.2);
+            background-position: 100% 50%;
+        }
+
+        .dl:active,
+        .fbtn:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 2px 8px rgba(0, 200, 83, 0.3);
+        }
+
+        /* Pulse ring on download buttons */
+        .dl::after,
+        .fbtn::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 14px;
+            border: 2px solid rgba(0, 230, 118, 0);
+            transition: border-color 0.3s ease;
+        }
+
+        .dl:hover::after,
+        .fbtn:hover::after {
+            border-color: rgba(0, 230, 118, 0.4);
+            animation: pulseRing 1.2s ease-out infinite;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.15);
+                opacity: 0;
+            }
+        }
+
+        /* ===== CARD ANIMATIONS ===== */
+        .card,
+        .feat-card,
+        .lst-item {
+            animation: fadeSlideUp 0.6s ease both;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .card:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .feat-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .feat-card:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .lst-item:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .lst-item:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .lst-item:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .lst-item:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Card hover enhancements */
+        .card {
+            transition: transform 0.35s cubic-bezier(.4, 2, .6, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 230, 118, 0.08);
+        }
+
+        .card:hover .card-ico {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-ico {
+            transition: transform 0.35s cubic-bezier(.4, 2, .6, 1), box-shadow 0.35s ease;
+        }
+
+        /* Featured card hover */
+        .feat-card {
+            transition: transform 0.35s cubic-bezier(.4, 2, .6, 1), box-shadow 0.35s ease;
+        }
+
+        .feat-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .feat-card:hover .fi {
+            transform: scale(1.05);
+        }
+
+        .fi {
+            transition: transform 0.35s cubic-bezier(.4, 2, .6, 1);
+        }
+
+        /* List item hover */
+        .lst-item {
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lst-item:hover {
+            transform: translateX(6px);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .lst-item:hover .ico {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .ico {
+            transition: transform 0.3s cubic-bezier(.4, 2, .6, 1);
+        }
+
+        /* ===== HERO ANIMATION ===== */
+        .hero h1 {
+            animation: heroTitle 0.8s ease both;
+        }
+
+        .hero p {
+            animation: heroTitle 0.8s ease 0.15s both;
+        }
+
+        .hero-search {
+            animation: heroTitle 0.8s ease 0.3s both;
+        }
+
+        .stat {
+            animation: heroTitle 0.8s ease 0.4s both;
+        }
+
+        @keyframes heroTitle {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SECTION HEADING ANIMATION ===== */
+        .sec-top {
+            animation: fadeSlideUp 0.5s ease both;
+        }
+
+        /* ===== BADGE PULSE ===== */
+        .badge {
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 0 6px rgba(0, 230, 118, 0);
+            }
+        }
+
+        /* ===== SMOOTH SCROLL ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .btt {
+            transition: transform 0.3s cubic-bezier(.4, 2, .6, 1), opacity 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btt:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4);
+        }
+
+        /* ===== SVG ICON CONTAINERS ===== */
+        .card-ico svg,
+        .ico svg,
+        .fi svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* ===== NUMBER BADGE IN LIST ===== */
+        .num {
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .lst-item:hover .num {
+            transform: scale(1.15);
+        }
+
+        /* ===== STAR RATING SHIMMER ===== */
+        .meta b {
+            background: linear-gradient(90deg, #ffd700, #ffec80, #ffd700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: starShimmer 3s linear infinite;
+        }
+
+        @keyframes starShimmer {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        /* ===== FOOTER HOVER ===== */
+        .ftr-col a {
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .ftr-col a:hover {
+            padding-left: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hdr">
+        <div class="wrap">
+            <a href="index.html" class="hdr-logo"><i>🎮</i>Lihka Games</a>
+            <div class="hdr-search"><input placeholder="Search apps & games..." id="hs"><button>🔎</button>
+            </div>
+            <nav class="hdr-nav">
+                <a href="index.html" class="on">Home</a>
+                <a href="apps.html">Apps</a>
+                <a href="games.html">Games</a>
+            </nav>
+            <button class="menu-btn"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="mob-nav">
+        <button class="mob-close">✕</button>
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="games.html">Games</a>
+        <a href="trending.html">Trending</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="mob-overlay"></div>
+
+     <section class="sec" style="padding-top:0">
+        <div class="wrap">
+            <div class="sec-top">
+            </div>
+            <div class="feat">
+                <!-- BLOCK FUSION - Editor's Choice Card -->
+                <div class="feat-card">
+                    <div class="fi" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path d="M16.3,88.8 Q54,99 91.7,88.8 Q94.6,81.6 91.7,74.2 Q54,64.2 16.3,74.2 Q13.4,81.6 16.3,88.8z" fill="#000000" fill-opacity="0.12"/>
+                            <path d="M22.1,85.9 Q54,93.2 85.9,85.9 Q88.8,80.1 85.9,75.7 Q54,68.6 22.1,75.7 Q19.2,80.1 22.1,85.9z" fill="#000000" fill-opacity="0.08"/>
+                            <g><path d="M34.6,36.6 L34.6,51.1 L43.3,46.8 L43.3,32.3z" fill="#0D47A1"/><path d="M17.2,32.3 L34.6,36.6 L43.3,32.3 L25.8,28z" fill="#42A5F5"/><path d="M17.2,32.3 L17.2,46.8 L34.6,51.1 L34.6,36.6z" fill="#1E88E5"/></g>
+                            <g><path d="M54,40.9 L54,55.5 L62.7,51.1 L62.7,36.6z" fill="#283593"/><path d="M36.6,36.6 L54,40.9 L62.7,36.6 L45.2,32.3z" fill="#5C6BC0"/><path d="M36.6,36.6 L36.6,51.1 L54,55.5 L54,40.9z" fill="#3F51B5"/></g>
+                            <g><path d="M74.3,45.3 L74.3,59.8 L83,55.5 L83,40.9z" fill="#4527A0"/><path d="M56.9,40.9 L74.3,45.3 L83,40.9 L65.6,36.6z" fill="#7E57C2"/><path d="M56.9,40.9 L56.9,55.5 L74.3,59.8 L74.3,45.3z" fill="#673AB7"/></g>
+                            <g><path d="M34.6,48.2 L34.6,62.7 L43.3,58.4 L43.3,43.8z" fill="#00695C"/><path d="M17.2,43.8 L34.6,48.2 L43.3,43.8 L25.8,39.5z" fill="#26A69A"/><path d="M17.2,43.8 L17.2,58.4 L34.6,62.7 L34.6,48.2z" fill="#009688"/></g>
+                            <g><path d="M54,52.5 L54,67.1 L62.7,62.7 L62.7,48.2z" fill="#00838F"/><path d="M36.6,48.2 L54,52.5 L62.7,48.2 L45.2,43.8z" fill="#26C6DA"/><path d="M36.6,48.2 L36.6,62.7 L54,67.1 L54,52.5z" fill="#00BCD4"/></g>
+                            <g><path d="M74.3,56.9 L74.3,71.4 L83,67.1 L83,52.5z" fill="#AD1457"/><path d="M56.9,52.5 L74.3,56.9 L83,52.5 L65.6,48.2z" fill="#EC407A"/><path d="M56.9,52.5 L56.9,67.1 L74.3,71.4 L74.3,56.9z" fill="#E91E63"/></g>
+                            <g><path d="M34.6,59.8 L34.6,74.3 L43.3,70 L43.3,55.5z" fill="#2E7D32"/><path d="M17.2,55.5 L34.6,59.8 L43.3,55.5 L25.8,51.1z" fill="#66BB6A"/><path d="M17.2,55.5 L17.2,70 L34.6,74.3 L34.6,59.8z" fill="#4CAF50"/></g>
+                            <g><path d="M54,64.1 L54,78.7 L62.7,74.3 L62.7,59.8z" fill="#E65100"/><path d="M36.6,59.8 L54,64.1 L62.7,59.8 L45.2,55.5z" fill="#FFA726"/><path d="M36.6,59.8 L36.6,74.3 L54,78.7 L54,64.1z" fill="#FF9800"/></g>
+                            <g><path d="M74.3,68.5 L74.3,83 L83,78.7 L83,64.1z" fill="#B71C1C"/><path d="M56.9,64.1 L74.3,68.5 L83,64.1 L65.6,59.8z" fill="#EF5350"/><path d="M56.9,64.1 L56.9,78.7 L74.3,83 L74.3,68.5z" fill="#F44336"/></g>
+                            <path d="M39.5,45.3 Q54,51.1 68.5,45.3 Q69.9,42.4 68.5,39.5 Q54,33.7 39.5,39.5 Q38.1,42.4 39.5,45.3z" fill="#000000" fill-opacity="0.15"/>
+                            <g><path d="M56.9,27.1 L56.9,41.6 L67,37.3 L67,22.7z" fill="#F9A825"/><path d="M39.5,22.7 L56.9,27.1 L67,22.7 L49.5,18.4z" fill="#FFEE58"/><path d="M39.5,22.7 L39.5,37.3 L56.9,41.6 L56.9,27.1z" fill="#FFD600"/></g>
+                        </svg>
+                    </div>
+                    <div class="finfo"><span class="badge">Editor's Choice</span>
+                        <h3>Block Fusion</h3>
+                        <p>Lihka Games &bull; ⭐ 4.7 &bull; 26 MB</p>
+                        <a href="https://github.com/LihkaGames/Block-Fusion-Game/raw/refs/heads/main/Block%20Fusion.apk"
+                            class="dl" download>⬇ Download</a>
+                    </div>
+                </div>
+
+                <!-- BLITZ STORM ARENA - Editor's Choice Card -->
+                <div class="feat-card">
+                    <div class="fi" style="background:linear-gradient(135deg,#0D1117,#1a1a2e)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path d="M54,18 L86,30 L90,54 L82,74 L54,94 L26,74 L18,54 L22,30 Z" fill="#FFD700" stroke="#FFF176" stroke-width="0.8"/>
+                            <path d="M54,22 L83,33 L87,54 L80,72 L54,90 L28,72 L21,54 L25,33 Z" fill="#0D1117"/>
+                            <path d="M62,26 L47,52 L58,51 L42,82 L70,54 L58,55 Z" fill="#FFD700"/>
+                            <path d="M60,32 L49,50 L57,49 L45,76 L66,56 L57,57 Z" fill="#FFEC80"/>
+                            <path d="M58,38 L51,49 L56,48 L48,70 L62,57 L57,58 Z" fill="#FFFDE7"/>
+                            <path d="M35,40 L32,47 L37,45 L34,52" stroke="#FFD700" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                            <path d="M73,40 L76,47 L71,45 L74,52" stroke="#FFD700" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="finfo"><span class="badge">Popular</span>
+                        <h3>Blitz Storm Arena</h3>
+                        <p>Lihka Games &bull; ⭐ 4.7 &bull; 10 MB</p>
+                        <a href="https://github.com/LihkaGames/Blitz-Storm-Arena/raw/refs/heads/main/Blitz%20Storm%20Arena.apk"
+                            class="dl">⬇ Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="wrap">
+            <div class="sec-top">
+                <h2>🎮 Popular Games</h2><a href="games.html">All Games →</a>
+            </div>
+            <div class="grid">
+                <!-- Block Fusion - Grid Card -->
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path
+                                d="M16.3,88.8 Q54,99 91.7,88.8 Q94.6,81.6 91.7,74.2 Q54,64.2 16.3,74.2 Q13.4,81.6 16.3,88.8z"
+                                fill="#000000" fill-opacity="0.12" />
+                            <path
+                                d="M22.1,85.9 Q54,93.2 85.9,85.9 Q88.8,80.1 85.9,75.7 Q54,68.6 22.1,75.7 Q19.2,80.1 22.1,85.9z"
+                                fill="#000000" fill-opacity="0.08" />
+                            <g>
+                                <path d="M34.6,36.6 L34.6,51.1 L43.3,46.8 L43.3,32.3z" fill="#0D47A1" />
+                                <path d="M17.2,32.3 L34.6,36.6 L43.3,32.3 L25.8,28z" fill="#42A5F5" />
+                                <path d="M17.2,32.3 L17.2,46.8 L34.6,51.1 L34.6,36.6z" fill="#1E88E5" />
+                            </g>
+                            <g>
+                                <path d="M54,40.9 L54,55.5 L62.7,51.1 L62.7,36.6z" fill="#283593" />
+                                <path d="M36.6,36.6 L54,40.9 L62.7,36.6 L45.2,32.3z" fill="#5C6BC0" />
+                                <path d="M36.6,36.6 L36.6,51.1 L54,55.5 L54,40.9z" fill="#3F51B5" />
+                            </g>
+                            <g>
+                                <path d="M74.3,45.3 L74.3,59.8 L83,55.5 L83,40.9z" fill="#4527A0" />
+                                <path d="M56.9,40.9 L74.3,45.3 L83,40.9 L65.6,36.6z" fill="#7E57C2" />
+                                <path d="M56.9,40.9 L56.9,55.5 L74.3,59.8 L74.3,45.3z" fill="#673AB7" />
+                            </g>
+                            <g>
+                                <path d="M34.6,48.2 L34.6,62.7 L43.3,58.4 L43.3,43.8z" fill="#00695C" />
+                                <path d="M17.2,43.8 L34.6,48.2 L43.3,43.8 L25.8,39.5z" fill="#26A69A" />
+                                <path d="M17.2,43.8 L17.2,58.4 L34.6,62.7 L34.6,48.2z" fill="#009688" />
+                            </g>
+                            <g>
+                                <path d="M54,52.5 L54,67.1 L62.7,62.7 L62.7,48.2z" fill="#00838F" />
+                                <path d="M36.6,48.2 L54,52.5 L62.7,48.2 L45.2,43.8z" fill="#26C6DA" />
+                                <path d="M36.6,48.2 L36.6,62.7 L54,67.1 L54,52.5z" fill="#00BCD4" />
+                            </g>
+                            <g>
+                                <path d="M74.3,56.9 L74.3,71.4 L83,67.1 L83,52.5z" fill="#AD1457" />
+                                <path d="M56.9,52.5 L74.3,56.9 L83,52.5 L65.6,48.2z" fill="#EC407A" />
+                                <path d="M56.9,52.5 L56.9,67.1 L74.3,71.4 L74.3,56.9z" fill="#E91E63" />
+                            </g>
+                            <g>
+                                <path d="M34.6,59.8 L34.6,74.3 L43.3,70 L43.3,55.5z" fill="#2E7D32" />
+                                <path d="M17.2,55.5 L34.6,59.8 L43.3,55.5 L25.8,51.1z" fill="#66BB6A" />
+                                <path d="M17.2,55.5 L17.2,70 L34.6,74.3 L34.6,59.8z" fill="#4CAF50" />
+                            </g>
+                            <g>
+                                <path d="M54,64.1 L54,78.7 L62.7,74.3 L62.7,59.8z" fill="#E65100" />
+                                <path d="M36.6,59.8 L54,64.1 L62.7,59.8 L45.2,55.5z" fill="#FFA726" />
+                                <path d="M36.6,59.8 L36.6,74.3 L54,78.7 L54,64.1z" fill="#FF9800" />
+                            </g>
+                            <g>
+                                <path d="M74.3,68.5 L74.3,83 L83,78.7 L83,64.1z" fill="#B71C1C" />
+                                <path d="M56.9,64.1 L74.3,68.5 L83,64.1 L65.6,59.8z" fill="#EF5350" />
+                                <path d="M56.9,64.1 L56.9,78.7 L74.3,83 L74.3,68.5z" fill="#F44336" />
+                            </g>
+                            <path
+                                d="M39.5,45.3 Q54,51.1 68.5,45.3 Q69.9,42.4 68.5,39.5 Q54,33.7 39.5,39.5 Q38.1,42.4 39.5,45.3z"
+                                fill="#000000" fill-opacity="0.15" />
+                            <g>
+                                <path d="M56.9,27.1 L56.9,41.6 L67,37.3 L67,22.7z" fill="#F9A825" />
+                                <path d="M39.5,22.7 L56.9,27.1 L67,22.7 L49.5,18.4z" fill="#FFEE58" />
+                                <path d="M39.5,22.7 L39.5,37.3 L56.9,41.6 L56.9,27.1z" fill="#FFD600" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h3>Block Fusion</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.7</b><span>26 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Block-Fusion-Game/raw/refs/heads/main/Block%20Fusion.apk"
+                        class="dl" download>⬇ Download</a>
+                </div>
+
+                <!-- Blitz Storm Arena - Grid Card -->
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#0D1117,#1a1a2e)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path d="M54,18 L86,30 L90,54 L82,74 L54,94 L26,74 L18,54 L22,30 Z" fill="#FFD700"
+                                stroke="#FFF176" stroke-width="0.8" />
+                            <path d="M54,22 L83,33 L87,54 L80,72 L54,90 L28,72 L21,54 L25,33 Z" fill="#0D1117" />
+                            <path d="M62,26 L47,52 L58,51 L42,82 L70,54 L58,55 Z" fill="#FFD700" />
+                            <path d="M60,32 L49,50 L57,49 L45,76 L66,56 L57,57 Z" fill="#FFEC80" />
+                            <path d="M58,38 L51,49 L56,48 L48,70 L62,57 L57,58 Z" fill="#FFFDE7" />
+                            <path d="M35,40 L32,47 L37,45 L34,52" stroke="#FFD700" stroke-width="1.2" fill="none"
+                                stroke-linecap="round" />
+                            <path d="M73,40 L76,47 L71,45 L74,52" stroke="#FFD700" stroke-width="1.2" fill="none"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Blitz Storm Arena</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.7</b><span>10 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Blitz-Storm-Arena/raw/refs/heads/main/Blitz%20Storm%20Arena.apk"
+                        class="dl" download>⬇ Download</a>
+                </div>
+
+                <!-- Crystal Cascade - Grid Card -->
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#0A1628,#1a237e)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path d="M54,54 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0" fill="#0A1628" />
+                            <path d="M54,54 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0" fill="none" stroke="#00E5FF"
+                                stroke-width="1.5" stroke-opacity="0.6" />
+                            <path d="M54,54 m-32,0 a32,32 0 1,1 64,0 a32,32 0 1,1 -64,0" fill="none" stroke="#2979FF"
+                                stroke-width="0.5" stroke-opacity="0.3" />
+                            <path d="M32,38 A0.8,0.8 0 1,1 33.6,38 A0.8,0.8 0 1,1 32,38 Z" fill="#FFFFFF"
+                                fill-opacity="0.4" />
+                            <path d="M74,36 A0.8,0.8 0 1,1 75.6,36 A0.8,0.8 0 1,1 74,36 Z" fill="#FFFFFF"
+                                fill-opacity="0.3" />
+                            <path d="M28,55 A0.6,0.6 0 1,1 29.2,55 A0.6,0.6 0 1,1 28,55 Z" fill="#00E5FF"
+                                fill-opacity="0.3" />
+                            <path d="M80,54 A0.6,0.6 0 1,1 81.2,54 A0.6,0.6 0 1,1 80,54 Z" fill="#00E5FF"
+                                fill-opacity="0.3" />
+                            <path d="M54,28 L70,43 L54,66 L38,43 Z" fill="#2979FF" />
+                            <path d="M54,28 L38,43 L44,41 Z" fill="#1565C0" fill-opacity="0.85" />
+                            <path d="M38,43 L54,66 L44,53 Z" fill="#0D47A1" fill-opacity="0.75" />
+                            <path d="M54,28 L70,43 L64,41 Z" fill="#00E5FF" fill-opacity="0.85" />
+                            <path d="M70,43 L54,66 L64,53 Z" fill="#2196F3" fill-opacity="0.75" />
+                            <path d="M54,28 L46,36 L49,35 Z" fill="#FFFFFF" fill-opacity="0.5" />
+                            <path d="M49,35 L46,36 L40,44 L47,42 Z" fill="#FFFFFF" fill-opacity="0.2" />
+                            <path d="M46,36 A2,2 0 1,1 50,36 A2,2 0 1,1 46,36 Z" fill="#FFFFFF" fill-opacity="0.7" />
+                            <path d="M44,36 A4,4 0 1,1 52,36 A4,4 0 1,1 44,36 Z" fill="#FFFFFF" fill-opacity="0.15" />
+                            <path d="M33,50 L38,45 L37,55 L32,53 Z" fill="#2979FF" fill-opacity="0.45" />
+                            <path d="M75,50 L70,45 L71,55 L76,53 Z" fill="#651FFF" fill-opacity="0.45" />
+                            <path d="M54,23 L55.5,19 L57,23 L61,24.5 L57,26 L55.5,30 L54,26 L50,24.5 Z" fill="#FFFFFF"
+                                fill-opacity="0.7" />
+                            <path d="M35,35 L36,33 L37,35 L39,36 L37,37 L36,39 L35,37 L33,36 Z" fill="#00E5FF"
+                                fill-opacity="0.5" />
+                            <path d="M73,34 L74,32 L75,34 L77,35 L75,36 L74,38 L73,36 L71,35 Z" fill="#00E5FF"
+                                fill-opacity="0.5" />
+                            <path d="M50,70 L52,66 L54,70 L52,73 Z" fill="#00E5FF" fill-opacity="0.15" />
+                            <path d="M57,72 L59,68 L61,72 L59,75 Z" fill="#2979FF" fill-opacity="0.12" />
+                            <path d="M42,68 L43,66 L44,68 L46,69 L44,70 L43,72 L42,70 L40,69 Z" fill="#FFFFFF"
+                                fill-opacity="0.3" />
+                            <path d="M65,66 L66,64 L67,66 L69,67 L67,68 L66,70 L65,68 L63,67 Z" fill="#FFFFFF"
+                                fill-opacity="0.25" />
+                        </svg>
+                    </div>
+                    <h3>Crystal Cascade</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.5</b><span>15 MB</span></div><a
+                        href="https://github.com/LihkaGames/Crystal-Cascade-Game/raw/refs/heads/main/Crystal%20Cascade.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+
+                <!-- Disc Strike Arena - Grid Card -->
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#2E1A0E,#4E342E);padding:8px;display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path fill="#3E2723" d="M54,54 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+                            <path fill="#5D4037" d="M54,54 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" />
+                            <path fill="#8D6E63" d="M54,54 m-35,0 a35,35 0 1,0 70,0" />
+                            <path fill="#4E342E" d="M54,54 m35,0 a35,35 0 1,0 -70,0" />
+                            <path fill="#6D4C41" d="M54,54 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0" />
+                            <path fill="#DABE8A" d="M54,54 m-30,0 a30,30 0 1,1 60,0 a30,30 0 1,1 -60,0" />
+                            <path fill="#E8D4A8" d="M54,54 m-30,0 a30,30 0 1,0 60,0" />
+                            <path fill="none" stroke="#C9A66B" stroke-width="0.4" d="M26,40 Q54,35 82,42" />
+                            <path fill="none" stroke="#C4A060" stroke-width="0.3" d="M28,48 Q54,44 80,50" />
+                            <path fill="none" stroke="#C9A66B" stroke-width="0.5" d="M24,56 Q54,52 84,58" />
+                            <path fill="none" stroke="#BF9B55" stroke-width="0.3" d="M26,64 Q54,60 82,66" />
+                            <path fill="none" stroke="#C9A66B" stroke-width="0.4" d="M30,72 Q54,68 78,74" />
+                            <path fill="none" stroke="#5D4037" stroke-width="2"
+                                d="M54,54 m-26,0 a26,26 0 1,1 52,0 a26,26 0 1,1 -52,0" />
+                            <path fill="none" stroke="#6D4C41" stroke-width="1"
+                                d="M54,54 m-22,0 a22,22 0 1,1 44,0 a22,22 0 1,1 -44,0" />
+                            <path fill="none" stroke="#8D6E63" stroke-width="0.8" d="M54,28 L54,80" />
+                            <path fill="none" stroke="#8D6E63" stroke-width="0.8" d="M28,54 L80,54" />
+                            <path fill="none" stroke="#A1887F" stroke-width="0.6" d="M35,35 L73,73 M73,35 L35,73" />
+                            <path fill="#C62828" d="M54,54 m-14,0 a14,14 0 1,1 28,0 a14,14 0 1,1 -28,0" />
+                            <path fill="#DABE8A" d="M54,54 m-12,0 a12,12 0 1,1 24,0 a12,12 0 1,1 -24,0" />
+                            <path fill="none" stroke="#5D4037" stroke-width="1.2"
+                                d="M54,54 m-8,0 a8,8 0 1,1 16,0 a8,8 0 1,1 -16,0" />
+                            <path fill="none" stroke="#6D4C41" stroke-width="0.8"
+                                d="M54,54 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#5D4037" d="M54,30 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+                            <path fill="#3E2723" d="M54,30 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0" />
+                            <path fill="#1A1A1A" d="M54,30 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#0D0D0D" d="M54,30 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#5D4037" d="M78,54 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+                            <path fill="#3E2723" d="M78,54 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0" />
+                            <path fill="#1A1A1A" d="M78,54 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#0D0D0D" d="M78,54 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#5D4037" d="M54,78 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+                            <path fill="#3E2723" d="M54,78 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0" />
+                            <path fill="#1A1A1A" d="M54,78 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#0D0D0D" d="M54,78 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#5D4037" d="M30,54 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+                            <path fill="#3E2723" d="M30,54 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0" />
+                            <path fill="#1A1A1A" d="M30,54 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#0D0D0D" d="M30,54 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#B71C1C" d="M54,54 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0" />
+                            <path fill="#D32F2F" d="M54,52.5 m-3,0 a3,2 0 1,1 6,0 a3,2 0 1,1 -6,0" />
+                            <path fill="#E57373" d="M54,51.5 m-1.5,0 a1.5,0.8 0 1,1 3,0 a1.5,0.8 0 1,1 -3,0" />
+                            <path fill="none" stroke="#8B0000" stroke-width="0.8"
+                                d="M54,54 m-2.5,0 a2.5,2.5 0 1,1 5,0 a2.5,2.5 0 1,1 -5,0" />
+                            <path fill="#E8DCC8" stroke="#A1887F" stroke-width="0.8"
+                                d="M42,42 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#F5F0E6" d="M42,40.5 m-2.5,0 a2.5,1.5 0 1,1 5,0 a2.5,1.5 0 1,1 -5,0" />
+                            <path fill="#FFFBF0" d="M42,40 m-1.2,0 a1.2,0.6 0 1,1 2.4,0 a1.2,0.6 0 1,1 -2.4,0" />
+                            <path fill="none" stroke="#BCAAA4" stroke-width="0.5"
+                                d="M42,42 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#E8DCC8" stroke="#A1887F" stroke-width="0.8"
+                                d="M66,64 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#F5F0E6" d="M66,62.5 m-2.5,0 a2.5,1.5 0 1,1 5,0 a2.5,1.5 0 1,1 -5,0" />
+                            <path fill="#FFFBF0" d="M66,62 m-1.2,0 a1.2,0.6 0 1,1 2.4,0 a1.2,0.6 0 1,1 -2.4,0" />
+                            <path fill="none" stroke="#BCAAA4" stroke-width="0.5"
+                                d="M66,64 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#E8DCC8" stroke="#A1887F" stroke-width="0.8"
+                                d="M64,42 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#F5F0E6" d="M64,40.5 m-2.5,0 a2.5,1.5 0 1,1 5,0 a2.5,1.5 0 1,1 -5,0" />
+                            <path fill="none" stroke="#BCAAA4" stroke-width="0.5"
+                                d="M64,42 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#3E2723" stroke="#1B0F0A" stroke-width="0.8"
+                                d="M42,64 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#5D4037" d="M42,62.5 m-2.5,0 a2.5,1.5 0 1,1 5,0 a2.5,1.5 0 1,1 -5,0" />
+                            <path fill="#6D4C41" d="M42,62 m-1.2,0 a1.2,0.6 0 1,1 2.4,0 a1.2,0.6 0 1,1 -2.4,0" />
+                            <path fill="none" stroke="#4E342E" stroke-width="0.5"
+                                d="M42,64 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#3E2723" stroke="#1B0F0A" stroke-width="0.8"
+                                d="M66,48 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#5D4037" d="M66,46.5 m-2.5,0 a2.5,1.5 0 1,1 5,0 a2.5,1.5 0 1,1 -5,0" />
+                            <path fill="#6D4C41" d="M66,46 m-1.2,0 a1.2,0.6 0 1,1 2.4,0 a1.2,0.6 0 1,1 -2.4,0" />
+                            <path fill="none" stroke="#4E342E" stroke-width="0.5"
+                                d="M66,48 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#3E2723" stroke="#1B0F0A" stroke-width="0.8"
+                                d="M46,50 m-4,0 a4,4 0 1,1 8,0 a4,4 0 1,1 -8,0" />
+                            <path fill="#5D4037" d="M46,48.5 m-2.5,0 a2.5,1.5 0 1,1 5,0 a2.5,1.5 0 1,1 -5,0" />
+                            <path fill="none" stroke="#4E342E" stroke-width="0.5"
+                                d="M46,50 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" />
+                            <path fill="#D7CCC8" stroke="#8D6E63" stroke-width="1.2"
+                                d="M54,68 m-5,0 a5,5 0 1,1 10,0 a5,5 0 1,1 -10,0" />
+                            <path fill="#EFEBE9" d="M54,66.5 m-3,0 a3,2 0 1,1 6,0 a3,2 0 1,1 -6,0" />
+                            <path fill="#FAFAFA" d="M54,65.5 m-1.5,0 a1.5,0.8 0 1,1 3,0 a1.5,0.8 0 1,1 -3,0" />
+                            <path fill="none" stroke="#A1887F" stroke-width="0.8"
+                                d="M54,68 m-2.5,0 a2.5,2.5 0 1,1 5,0 a2.5,2.5 0 1,1 -5,0" />
+                            <path fill="#BCAAA4" d="M54,68 m-1,0 a1,1 0 1,1 2,0 a1,1 0 1,1 -2,0" />
+                        </svg>
+                    </div>
+                    <h3>Disc Strike Arena</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.6</b><span>10 MB</span></div><a
+                        href="https://github.com/LihkaGames/Disc-Strike-Arena-Game/releases/download/v1.0/Disc.Strike.Arena.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+
+                <!-- Roll Master Quest: Ludo Game - Grid Card -->
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#251a3d,#1f0b36);padding:8px;display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <defs>
+                                <linearGradient id="i-redQ" x1="34" y1="28" x2="50" y2="44"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FF6B6B" />
+                                    <stop offset="1" stop-color="#EE5A52" />
+                                </linearGradient>
+                                <linearGradient id="i-greenQ" x1="58" y1="28" x2="74" y2="44"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#69DB7C" />
+                                    <stop offset="1" stop-color="#51CF66" />
+                                </linearGradient>
+                                <linearGradient id="i-yellowQ" x1="34" y1="52" x2="50" y2="68"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFE066" />
+                                    <stop offset="1" stop-color="#FFD43B" />
+                                </linearGradient>
+                                <linearGradient id="i-blueQ" x1="58" y1="52" x2="74" y2="68"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#74C0FC" />
+                                    <stop offset="1" stop-color="#4DABF7" />
+                                </linearGradient>
+                                <linearGradient id="i-centerD" x1="50" y1="44" x2="58" y2="52"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFD700" />
+                                    <stop offset="1" stop-color="#FFA000" />
+                                </linearGradient>
+                                <radialGradient id="i-rT1" cx="38" cy="32" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FF8787" />
+                                    <stop offset="1" stop-color="#C92A2A" />
+                                </radialGradient>
+                                <radialGradient id="i-rT2" cx="44" cy="38" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FF8787" />
+                                    <stop offset="1" stop-color="#C92A2A" />
+                                </radialGradient>
+                                <radialGradient id="i-gT1" cx="62" cy="32" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#8CE99A" />
+                                    <stop offset="1" stop-color="#2B8A3E" />
+                                </radialGradient>
+                                <radialGradient id="i-gT2" cx="68" cy="38" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#8CE99A" />
+                                    <stop offset="1" stop-color="#2B8A3E" />
+                                </radialGradient>
+                                <radialGradient id="i-yT1" cx="38" cy="56" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFE066" />
+                                    <stop offset="1" stop-color="#F59F00" />
+                                </radialGradient>
+                                <radialGradient id="i-yT2" cx="44" cy="62" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFE066" />
+                                    <stop offset="1" stop-color="#F59F00" />
+                                </radialGradient>
+                                <radialGradient id="i-bT1" cx="62" cy="56" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#74C0FC" />
+                                    <stop offset="1" stop-color="#1864AB" />
+                                </radialGradient>
+                                <radialGradient id="i-bT2" cx="68" cy="62" r="4" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#74C0FC" />
+                                    <stop offset="1" stop-color="#1864AB" />
+                                </radialGradient>
+                                <linearGradient id="i-crownG" x1="42" y1="11" x2="66" y2="20"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFD700" />
+                                    <stop offset="0.5" stop-color="#FFEC80" />
+                                    <stop offset="1" stop-color="#FFA000" />
+                                </linearGradient>
+                                <linearGradient id="i-crownB" x1="42" y1="20" x2="66" y2="23"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFA000" />
+                                    <stop offset="1" stop-color="#FF8F00" />
+                                </linearGradient>
+                                <linearGradient id="i-diceL" x1="17.5" y1="70" x2="32.5" y2="85"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFFFFF" />
+                                    <stop offset="1" stop-color="#F1F3F5" />
+                                </linearGradient>
+                                <linearGradient id="i-diceR" x1="75.5" y1="72" x2="90.5" y2="87"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFFFFF" />
+                                    <stop offset="1" stop-color="#F1F3F5" />
+                                </linearGradient>
+                                <radialGradient id="i-outerGlow" cx="54" cy="48" r="28" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FFD700" stop-opacity="0" />
+                                    <stop offset="0.8" stop-color="#FFD700" stop-opacity="0.2" />
+                                    <stop offset="1" stop-color="#FFD700" stop-opacity="0" />
+                                </radialGradient>
+                            </defs>
+                            <path d="M36,30h36v48h-36z" fill="#000000" fill-opacity="0.08" />
+                            <path d="M34,28h16v16h-16z" fill="url(#i-redQ)" />
+                            <path d="M34,28h16v16h-16z" stroke-width="0.5" stroke="#D63031" fill="none" />
+                            <path d="M58,28h16v16h-16z" fill="url(#i-greenQ)" />
+                            <path d="M58,28h16v16h-16z" stroke-width="0.5" stroke="#2B8A3E" fill="none" />
+                            <path d="M34,52h16v16h-16z" fill="url(#i-yellowQ)" />
+                            <path d="M34,52h16v16h-16z" stroke-width="0.5" stroke="#F59F00" fill="none" />
+                            <path d="M58,52h16v16h-16z" fill="url(#i-blueQ)" />
+                            <path d="M58,52h16v16h-16z" stroke-width="0.5" stroke="#1864AB" fill="none" />
+                            <path d="M50,28h8v16h-8z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                            <path d="M50,52h8v16h-8z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                            <path d="M34,44h16v8h-16z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                            <path d="M58,44h16v8h-16z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                            <path d="M50,44h8v8h-8z" fill="url(#i-centerD)" />
+                            <path d="M54,44L50,48L58,48Z" fill="#EE5A52" fill-opacity="0.85" />
+                            <path d="M58,48L54,44L54,52Z" fill="#51CF66" fill-opacity="0.85" />
+                            <path d="M54,52L58,48L50,48Z" fill="#339AF0" fill-opacity="0.85" />
+                            <path d="M50,48L54,52L54,44Z" fill="#FFD43B" fill-opacity="0.85" />
+                            <path d="M54,44L58,48L54,52L50,48Z" stroke-width="0.6" stroke="#E67700" fill="none" />
+                            <circle cx="54" cy="48" r="1.8" fill="#FFFFFF" fill-opacity="0.9" />
+                            <circle cx="39" cy="33" r="3.5" fill="url(#i-rT1)" />
+                            <circle cx="39" cy="33" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="45" cy="39" r="3.5" fill="url(#i-rT2)" />
+                            <circle cx="45" cy="39" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="63" cy="33" r="3.5" fill="url(#i-gT1)" />
+                            <circle cx="63" cy="33" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="69" cy="39" r="3.5" fill="url(#i-gT2)" />
+                            <circle cx="69" cy="39" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="39" cy="57" r="3.5" fill="url(#i-yT1)" />
+                            <circle cx="39" cy="57" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="45" cy="63" r="3.5" fill="url(#i-yT2)" />
+                            <circle cx="45" cy="63" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="63" cy="57" r="3.5" fill="url(#i-bT1)" />
+                            <circle cx="63" cy="57" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <circle cx="69" cy="63" r="3.5" fill="url(#i-bT2)" />
+                            <circle cx="69" cy="63" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                            <path d="M42,20L43.5,14L47,18L50.5,11L54,17L57.5,11L61,18L64.5,14L66,20Z"
+                                fill="url(#i-crownG)" stroke-width="0.5" stroke="#BF8F00" />
+                            <rect x="42" y="20" width="24" height="3" fill="url(#i-crownB)" />
+                            <circle cx="47" cy="17.5" r="1.5" fill="#EE5A52" />
+                            <circle cx="54" cy="16.5" r="1.8" fill="#339AF0" />
+                            <circle cx="61" cy="17.5" r="1.5" fill="#51CF66" />
+                            <circle cx="47" cy="17.5" r="0.6" fill="#FFFFFF" fill-opacity="0.5" />
+                            <circle cx="54" cy="16.5" r="0.7" fill="#FFFFFF" fill-opacity="0.5" />
+                            <circle cx="61" cy="17.5" r="0.6" fill="#FFFFFF" fill-opacity="0.5" />
+                            <rect x="17.5" y="70" width="15" height="15" rx="2.5" ry="2.5" fill="url(#i-diceL)" />
+                            <rect x="17.5" y="70" width="15" height="15" rx="2.5" ry="2.5" stroke-width="0.5"
+                                stroke="#CED4DA" fill="none" />
+                            <circle cx="22" cy="73.5" r="1.2" fill="#C92A2A" />
+                            <circle cx="22" cy="77.5" r="1.2" fill="#C92A2A" />
+                            <circle cx="22" cy="81.5" r="1.2" fill="#C92A2A" />
+                            <circle cx="28" cy="73.5" r="1.2" fill="#C92A2A" />
+                            <circle cx="28" cy="77.5" r="1.2" fill="#C92A2A" />
+                            <circle cx="28" cy="81.5" r="1.2" fill="#C92A2A" />
+                            <rect x="75.5" y="72" width="15" height="15" rx="2.5" ry="2.5" fill="url(#i-diceR)" />
+                            <rect x="75.5" y="72" width="15" height="15" rx="2.5" ry="2.5" stroke-width="0.5"
+                                stroke="#CED4DA" fill="none" />
+                            <circle cx="80" cy="75" r="1.2" fill="#1864AB" />
+                            <circle cx="86" cy="75" r="1.2" fill="#1864AB" />
+                            <circle cx="83" cy="79.5" r="1.2" fill="#1864AB" />
+                            <circle cx="80" cy="84" r="1.2" fill="#1864AB" />
+                            <circle cx="86" cy="84" r="1.2" fill="#1864AB" />
+                            <path d="M28,30L29,27L30,30L33,31L30,32L29,35L28,32L25,31Z" fill="#FFD700"
+                                fill-opacity="0.7" />
+                            <path d="M78,28L79,25.5L80,28L82.5,29L80,30L79,32.5L78,30L75.5,29Z" fill="#FFD700"
+                                fill-opacity="0.5" />
+                            <path d="M54,88L55.5,84L57,88L61,89.5L57,91L55.5,95L54,91L50,89.5Z" fill="#FFD700"
+                                fill-opacity="0.6" />
+                            <circle cx="20" cy="48" r="1" fill="#FFD700" fill-opacity="0.4" />
+                            <circle cx="88" cy="48" r="1" fill="#FFD700" fill-opacity="0.4" />
+                            <circle cx="15" cy="60" r="0.8" fill="#FFD700" fill-opacity="0.3" />
+                            <circle cx="93" cy="60" r="0.8" fill="#FFD700" fill-opacity="0.3" />
+                            <path d="M37,46L38,44.5L39,46L40.5,47L39,48L38,49.5L37,48L35.5,47Z" fill="#FFD700"
+                                fill-opacity="0.8" />
+                            <path d="M55,31L56,29.5L57,31L58.5,32L57,33L56,34.5L55,33L53.5,32Z" fill="#FFD700"
+                                fill-opacity="0.8" />
+                            <path d="M69,48L70,46.5L71,48L72.5,49L71,50L70,51.5L69,50L67.5,49Z" fill="#FFD700"
+                                fill-opacity="0.8" />
+                            <path d="M51,63L52,61.5L53,63L54.5,64L53,65L52,66.5L51,65L49.5,64Z" fill="#FFD700"
+                                fill-opacity="0.8" />
+                            <circle cx="54" cy="48" r="28" stroke-width="0.8" stroke="url(#i-outerGlow)" fill="none" />
+                        </svg>
+                    </div>
+                    <h3>Roll Master Quest: Ludo Game</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.8</b><span>7 MB</span></div><a
+                        href="https://github.com/LihkaGames/Roll-Master-Quest-Ludo-Game/releases/download/v1.0.0/Roll.Master.Quest.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+
+                <!-- Serpent Surge - Grid Card -->
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#1A1A2E,#16213E);padding:8px;display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                            <path fill="#1A1A2E" d="M0,0h108v108H0z" />
+                            <path fill="#16213E" d="M54,4A50,50,0,1,1,54,104A50,50,0,1,1,54,4Z" />
+                            <path fill="none" stroke="#39FF14" stroke-opacity="0.25" stroke-width="16"
+                                stroke-linecap="round" d="M25,82 Q12,52 38,40" />
+                            <path fill="none" stroke="#39FF14" stroke-opacity="0.25" stroke-width="16"
+                                stroke-linecap="round" d="M38,40 Q62,28 58,54" />
+                            <path fill="none" stroke="#39FF14" stroke-opacity="0.25" stroke-width="16"
+                                stroke-linecap="round" d="M58,54 Q54,78 78,72" />
+                            <path fill="none" stroke="#39FF14" stroke-opacity="0.25" stroke-width="16"
+                                stroke-linecap="round" d="M78,72 Q98,66 88,48 Q78,32 65,42" />
+                            <path fill="none" stroke="#39FF14" stroke-width="10" stroke-linecap="round"
+                                stroke-linejoin="round" d="M25,82 Q12,52 38,40" />
+                            <path fill="none" stroke="#39FF14" stroke-width="10" stroke-linecap="round"
+                                stroke-linejoin="round" d="M38,40 Q62,28 58,54" />
+                            <path fill="none" stroke="#39FF14" stroke-width="10" stroke-linecap="round"
+                                stroke-linejoin="round" d="M58,54 Q54,78 78,72" />
+                            <path fill="none" stroke="#39FF14" stroke-width="10" stroke-linecap="round"
+                                stroke-linejoin="round" d="M78,72 Q98,66 88,48 Q78,32 65,42" />
+                            <path fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3"
+                                stroke-linecap="round" d="M26,80 Q14,54 38,42" />
+                            <path fill="none" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="3"
+                                stroke-linecap="round" d="M38,42 Q58,32 57,52" />
+                            <path fill="#39FF14" fill-opacity="0.31" d="M63,30A16,16,0,1,1,63,62A16,16,0,1,1,63,30Z" />
+                            <path fill="#39FF14" d="M63,33A13,13,0,1,1,63,59A13,13,0,1,1,63,33Z" />
+                            <path fill="#000000" fill-opacity="0.19"
+                                d="M63,46A13,6.5,0,1,1,63,59A13,6.5,0,1,1,63,46Z" />
+                            <path fill="#FFFFFF" fill-opacity="0.31" d="M58,35A7,5,0,1,1,58,45A7,5,0,1,1,58,35Z" />
+                            <path fill="#FFFFFF" d="M57,39A5,5,0,1,1,57,49A5,5,0,1,1,57,39Z" />
+                            <path fill="#FFFFFF" d="M67,39A5,5,0,1,1,67,49A5,5,0,1,1,67,39Z" />
+                            <path fill="#1A1A2E" d="M58,41A3,3,0,1,1,58,47A3,3,0,1,1,58,41Z" />
+                            <path fill="#1A1A2E" d="M68,41A3,3,0,1,1,68,47A3,3,0,1,1,68,41Z" />
+                            <path fill="#FFFFFF" d="M57,41A1.5,1.5,0,1,1,57,44A1.5,1.5,0,1,1,57,41Z" />
+                            <path fill="#FFFFFF" d="M67,41A1.5,1.5,0,1,1,67,44A1.5,1.5,0,1,1,67,41Z" />
+                            <path fill="none" stroke="#FF4D6D" stroke-width="3" stroke-linecap="round"
+                                d="M76,46 L86,42" />
+                            <path fill="none" stroke="#FF4D6D" stroke-width="3" stroke-linecap="round"
+                                d="M86,42 L92,36" />
+                            <path fill="none" stroke="#FF4D6D" stroke-width="3" stroke-linecap="round"
+                                d="M86,42 L92,48" />
+                            <path fill="none" stroke="#39FF14" stroke-width="6" stroke-linecap="round"
+                                d="M25,82 L22,88" />
+                            <path fill="none" stroke="#39FF14" stroke-opacity="0.25" stroke-width="12"
+                                stroke-linecap="round" d="M25,82 L22,88" />
+                        </svg>
+                    </div>
+                    <h3>Serpent Surge</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.4</b><span>6 MB</span></div><a
+                        href="https://github.com/LihkaGames/Serpent-Surge-Game/releases/download/v1.0.0/Serpent.Surge.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+
+                <!-- ✅ TURBO TRAIL RACER - UPDATED WITH SVG LOGO -->
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#1A237E,#0D47A1);padding:8px;display:flex;align-items:center;justify-content:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <defs>
+                                <clipPath id="c">
+                                    <rect x="10" y="10" width="492" height="492" rx="56" />
+                                </clipPath>
+                            </defs>
+                            <rect width="512" height="512" rx="56" fill="#1A237E" />
+                            <rect x="10" y="10" width="492" height="492" rx="56" fill="#0D47A1" />
+                            <g clip-path="url(#c)">
+                                <rect x="10" y="10" width="492" height="170" fill="#1565C0" />
+                                <rect x="10" y="150" width="492" height="90" fill="#1976D2" />
+                                <rect x="10" y="210" width="492" height="80" fill="#2196F3" />
+                                <circle cx="400" cy="80" r="45" fill="#FFD54F" />
+                                <circle cx="400" cy="80" r="35" fill="#FFECB3" />
+                                <g fill="#FFD54F">
+                                    <path d="M400,25l4,15h-8z" />
+                                    <path d="M400,135l4-15h-8z" />
+                                    <path d="M345,80l15-4v8z" />
+                                    <path d="M455,80l-15-4v8z" />
+                                    <path d="M361,41l9,12-6,4z" />
+                                    <path d="M439,119l-9-12 6-4z" />
+                                    <path d="M439,41l-9,12 6,4z" />
+                                    <path d="M361,119l9-12-6-4z" />
+                                </g>
+                                <g fill="#64B5F6" opacity=".6">
+                                    <ellipse cx="80" cy="100" rx="20" ry="14" />
+                                    <ellipse cx="105" cy="95" rx="18" ry="12" />
+                                    <ellipse cx="60" cy="95" rx="15" ry="10" />
+                                </g>
+                                <g fill="#64B5F6" opacity=".5">
+                                    <ellipse cx="230" cy="70" rx="22" ry="15" />
+                                    <ellipse cx="258" cy="65" rx="20" ry="13" />
+                                </g>
+                                <g fill="#90CAF9" opacity=".4">
+                                    <ellipse cx="160" cy="140" rx="16" ry="10" />
+                                    <ellipse cx="180" cy="136" rx="14" ry="9" />
+                                </g>
+                                <path d="M10,310L100,190l50,40 50-50 80,80 50-40 90,60 82-50v80H10z" fill="#1B5E20"
+                                    opacity=".5" />
+                                <path d="M10,330L80,250l60,40 70-50 60,40 80-30 80,50 72-30v60H10z" fill="#2E7D32"
+                                    opacity=".6" />
+                                <path
+                                    d="M10,420v-40q70,0 110-20 40-20 80-50 20-15 40,0 40,30 80,60 60,40 120,25 35-7 62,5v20H10z"
+                                    fill="#388E3C" />
+                                <path
+                                    d="M10,420v-30q70,0 110-18 40-20 80-50 18-14 36-4 39,27 84,60 60,37 120,24 35-7 62,5v13H10z"
+                                    fill="#43A047" />
+                                <path
+                                    d="M10,420v-22q70,0 110-18 40-20 80-48 15-12 30-4 40,24 90,56 60,34 120,23 35-7 62,5v8H10z"
+                                    fill="#4CAF50" />
+                                <path d="M10,420h492v36q0,46-56,46H66q-56,0-56-46z" fill="#5D4037" />
+                                <path d="M10,440h492M10,460h492M10,480h492" stroke="#4E342E" stroke-width="1.5"
+                                    fill="none" />
+                                <g fill="#4E342E">
+                                    <ellipse cx="80" cy="445" rx="4" ry="3" />
+                                    <ellipse cx="200" cy="455" rx="5" ry="3" />
+                                    <ellipse cx="350" cy="448" rx="6" ry="3" />
+                                    <ellipse cx="450" cy="465" rx="4" ry="2" />
+                                </g>
+                                <g stroke-width="2.5" stroke-linecap="round" fill="none">
+                                    <path d="M100,370l5-15 5,15M155,348l5-15 5,15M280,365l5-13 5,13" stroke="#2E7D32" />
+                                    <path d="M106,370l6-18 6,18M420,400l5-12 5,12" stroke="#388E3C" />
+                                    <path d="M350,385l5-13 5,13" stroke="#2E7D32" stroke-width="2" />
+                                </g>
+                                <ellipse cx="180" cy="395" rx="50" ry="8" fill="#1B5E20" opacity=".35" />
+                                <g stroke="#78909C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                    fill="none">
+                                    <path d="M145,330l-5-20h10l-5-20" />
+                                    <path d="M260,310l-5-20h10l-5-20" />
+                                </g>
+                                <path d="M125,310l20,5 105-20 20-5z" fill="#37474F" />
+                                <g id="w">
+                                    <circle r="32" fill="#212121" />
+                                    <circle r="28" fill="#424242" />
+                                    <circle r="22" fill="#212121" />
+                                    <circle r="14" fill="#B0BEC5" />
+                                    <circle r="10" fill="#90A4AE" />
+                                    <circle r="5" fill="#CFD8DC" />
+                                    <g stroke="#78909C" fill="none">
+                                        <path d="M0-14v28M-14,0h28" stroke-width="2.5" />
+                                        <path d="M-10-10l20,20M-10,10l20-20" stroke-width="2" />
+                                    </g>
+                                    <g stroke="#616161" stroke-width="3" stroke-linecap="round" fill="none">
+                                        <path d="M0-32v6M0,26v6M-32,0h6M26,0h6" />
+                                        <path d="M-23-23l4,4M19,19l4,4M-23,23l4-4M19-19l4-4" />
+                                    </g>
+                                </g>
+                                <use href="#w" x="145" y="340" />
+                                <use href="#w" x="265" y="318" />
+                                <path d="M120,295l10-10 25-5 45-12 45-13 30-5 10,5 3,10-6,10-22,7-105,23-25,5-10-2z"
+                                    fill="#E53935" />
+                                <path d="M130,285l25-5 45-12 45-13 30-5 5,3-35,7-45,13-45,12-25,5z" fill="#EF5350" />
+                                <path d="M170,275l15-35 10-5 45-13 15,3 3,15-3,12-55,17-25,7z" fill="#C62828" />
+                                <path d="M170,275l15-35 10-5 45-13 15,3 3,15-3,12" stroke="#B71C1C" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                <path d="M190,268l8-23 37-11 8,6-3,15-40,10z" fill="#29B6F6" />
+                                <path d="M198,245l5,0-7,17-3,1z" fill="#4FC3F7" opacity=".7" />
+                                <path d="M215,257l7-19" stroke="#0288D1" stroke-width="2" fill="none" />
+                                <path d="M275,250l20-5 3,5-3,10-10,3-5-3z" fill="#B71C1C" />
+                                <ellipse cx="290" cy="248" rx="5" ry="4" fill="#FFF9C4" />
+                                <ellipse cx="290" cy="248" rx="3" ry="2" fill="#FFF" />
+                                <path d="M115,298l5-3v15l-5,2-5-4z" fill="#B71C1C" />
+                                <ellipse cx="113" cy="300" rx="3" ry="4" fill="#FF7043" />
+                                <path d="M135,293l125-33v5L135,298z" fill="#FF8F00" opacity=".8" />
+                                <path d="M108,305l-10,3-2-3 9-3z" fill="#78909C" />
+                                <path
+                                    d="M98,305Q70,300 55,310 65,295 80,298 60,280 50,290 65,270 82,290 75,265 90,285 88,275 95,290L98,300z"
+                                    fill="#FF6D00" />
+                                <path
+                                    d="M98,304Q78,300 68,306 75,295 85,298 72,285 65,292 78,278 88,292 85,280 93,290L96,300z"
+                                    fill="#FF9100" />
+                                <path
+                                    d="M98,303Q85,300 78,304 82,296 88,298 82,290 78,295 85,285 90,294 88,288 93,293L96,300z"
+                                    fill="#FFAB00" />
+                                <path d="M98,302Q90,300 86,303 88,298 92,299 90,294 93,296L96,300z" fill="#FFD600" />
+                                <g stroke="#FFF" stroke-linecap="round" fill="none">
+                                    <path d="M50,265l45-7" stroke-width="3" opacity=".7" />
+                                    <path d="M35,280l50-5" stroke-width="2.5" opacity=".6" />
+                                    <path d="M45,295l35-5" stroke-width="2" opacity=".5" />
+                                    <path d="M55,250l35-5" stroke-width="2" opacity=".5" />
+                                    <path d="M40,310l35-5" stroke-width="1.5" opacity=".4" />
+                                </g>
+                                <g>
+                                    <ellipse cx="90" cy="370" rx="12" ry="8" fill="#8D6E63" opacity=".5" />
+                                    <ellipse cx="70" cy="365" rx="10" ry="7" fill="#A1887F" opacity=".4" />
+                                    <ellipse cx="55" cy="358" rx="8" ry="5" fill="#BCAAA4" opacity=".3" />
+                                    <ellipse cx="105" cy="378" rx="8" ry="5" fill="#8D6E63" opacity=".4" />
+                                </g>
+                                <g>
+                                    <circle cx="75" cy="350" r="3" fill="#795548" opacity=".6" />
+                                    <circle cx="55" cy="345" r="2" fill="#795548" opacity=".5" />
+                                    <circle cx="95" cy="355" r="2" fill="#6D4C41" opacity=".6" />
+                                    <circle cx="65" cy="340" r="2" fill="#795548" opacity=".4" />
+                                    <circle cx="45" cy="355" r="2" fill="#8D6E63" opacity=".4" />
+                                </g>
+                                <path d="M340,160l5-15 5,15 15-5-13,10 8,13-13-8-7,12v-14l-15,2z" fill="#FFD54F" />
+                                <path d="M60,180l3-8 3,8 8-2-6,5 3,7-6-4-5,6v-7l-8,2z" fill="#FFF176" opacity=".8" />
+                                <path d="M440,160l2-5 2,5 5-1-4,3 2,5-4-3-3,4v-5l-5,1z" fill="#FFF176" opacity=".7" />
+                                <path d="M310,120l2-5 2,5 5-1-4,3 2,5-4-3-3,4v-5l-5,1z" fill="#FFEE58" opacity=".6" />
+                                <path d="M295,248l45-18 5,10-47,12z" fill="#FFF9C4" opacity=".2" />
+                                <path d="M295,248l65-23 5,7-67,18z" fill="#FFF9C4" opacity=".1" />
+                            </g>
+                            <rect width="512" height="512" rx="56" stroke="#FF6D00" stroke-width="6" fill="none" />
+                            <rect x="4" y="4" width="504" height="504" rx="56" stroke="#FFB300" stroke-width="2"
+                                fill="none" />
+                            <circle cx="430" cy="410" r="28" fill="#FF6D00" />
+                            <circle cx="430" cy="410" r="24" fill="#FFB300" />
+                            <circle cx="430" cy="410" r="20" fill="#FFF" />
+                            <g fill="#212121">
+                                <rect x="420" y="400" width="10" height="10" />
+                                <rect x="430" y="410" width="10" height="10" />
+                            </g>
+                            <path d="M195,235l-7-35" stroke="#78909C" stroke-width="2.5" stroke-linecap="round"
+                                fill="none" />
+                            <path d="M188,200l17-5v13l-17,4z" fill="#FF6D00" />
+                            <path d="M188,200l17-5v6l-17,5z" fill="#FFB300" />
+                        </svg>
+                    </div>
+                    <h3>Turbo Trail Racer</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>17 MB</span></div><a
+                        href="https://github.com/LihkaGames/Turbo-Trail-Racer-Game/releases/download/v1.0.0/Turbo.Trail.Racer.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <!-- ✅ Precision Shot -->
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#1A237E,#0D47A1);padding:8px;display:flex;align-items:center;justify-content:center;">
+                        <?xml version="1.0" encoding="UTF-8"?>
+                        <svg width="512" height="512" viewBox="0 0 100 100" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="48" fill="#E0E0E0" />
+
+                            <circle cx="50" cy="50" r="45" fill="#FFFFFF" />
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M50 90C72.0914 90 90 72.0914 90 50C90 27.9086 72.0914 10 50 10C27.9086 10 10 27.9086 10 50C10 72.0914 27.9086 90 50 90ZM50 80C66.5685 80 80 66.5685 80 50C80 33.4315 66.5685 20 50 20C33.4315 20 20 33.4315 20 50C20 66.5685 33.4315 80 50 80Z"
+                                fill="#FF0000" />
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M50 70C61.0457 70 70 61.0457 70 50C70 38.9543 61.0457 30 50 30C38.9543 30 30 38.9543 30 50C30 61.0457 38.9543 70 50 70ZM50 60C55.5228 60 60 55.5228 60 50C60 44.4772 55.5228 40 50 40C44.4772 40 40 44.4772 40 50C40 55.5228 44.4772 60 50 60Z"
+                                fill="#FF0000" />
+
+                            <circle cx="50" cy="50" r="10" fill="#FFD700" />
+
+                            <path d="M15 35C20 20 35 10 50 10C65 10 80 20 85 35L15 35Z" fill="white"
+                                fill-opacity="0.2" />
+                        </svg>
+
+                    </div>
+                    <h3>Precision Shot</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>6 MB</span></div><a
+                        href="https://github.com/LihkaGames/Precision-Shot-Game/releases/download/v1.0.0/Precision.Shot.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <!-- ✅ Phantom Strike -->
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:8px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+
+                            <path fill="#080C08" d="M0,0h108v108H0z" />
+
+                            <path fill="#0D180D" fill-opacity="0.5"
+                                d="M54,50 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0" />
+
+                            <path stroke="#141E14" stroke-width="0.2" stroke-opacity="0.4" fill="none"
+                                d="M18,36h72 M18,54h72 M18,72h72 M36,18v72 M54,18v72 M72,18v72" />
+
+                            <path stroke="#1E2E1A" stroke-width="0.8" fill="none" d="M16,16 L92,16 L92,92 L16,92z" />
+
+                            <path stroke="#CC2200" stroke-width="2.5" stroke-linecap="square" fill="none"
+                                d="M16,30 L16,16 L30,16" />
+                            <path stroke="#CC2200" stroke-width="2.5" stroke-linecap="square" fill="none"
+                                d="M78,16 L92,16 L92,30" />
+                            <path stroke="#CC2200" stroke-width="2.5" stroke-linecap="square" fill="none"
+                                d="M92,78 L92,92 L78,92" />
+                            <path stroke="#CC2200" stroke-width="2.5" stroke-linecap="square" fill="none"
+                                d="M28,92 L16,92 L16,78" />
+
+                            <path fill="#CC2200" d="M16,16 m-1.3,0 a1.3,1.3 0 1,1 2.6,0 a1.3,1.3 0 1,1 -2.6,0" />
+                            <path fill="#CC2200" d="M92,16 m-1.3,0 a1.3,1.3 0 1,1 2.6,0 a1.3,1.3 0 1,1 -2.6,0" />
+                            <path fill="#CC2200" d="M92,92 m-1.3,0 a1.3,1.3 0 1,1 2.6,0 a1.3,1.3 0 1,1 -2.6,0" />
+                            <path fill="#CC2200" d="M16,92 m-1.3,0 a1.3,1.3 0 1,1 2.6,0 a1.3,1.3 0 1,1 -2.6,0" />
+
+                            <path fill="#CC2200" fill-opacity="0.45" d="M34,17 L50,17 L50,17.6 L34,17.6z" />
+                            <path fill="#CC2200" fill-opacity="0.45" d="M58,90 L74,90 L74,90.6 L58,90.6z" />
+
+                            <path fill="#2D3D24"
+                                d="M34,36 Q34,22 54,22 Q74,22 74,36 L74,44 Q74,48 54,48 Q34,48 34,44z" />
+
+                            <path fill="#222E1C" d="M36,24 Q54,20 72,24 L72,31 Q54,27 36,31z" />
+
+                            <path fill="#1A241A" d="M48,21 L60,21 L60,28 L48,28z" />
+
+                            <path fill="#1A1A1A" d="M49,19 L59,19 L59,23 L49,23z" />
+
+                            <path fill="#141414" d="M51,17 L57,17 L57,20.5 L51,20.5z" />
+
+                            <path fill="#344028" d="M38,25 L47,24 L47,30 L38,30.5z" />
+                            <path fill="#38462C" d="M61,24 L70,25 L70,30.5 L61,30z" />
+
+                            <path fill="#2A3820" fill-opacity="0.5" d="M40,27 L44,26.5 L44,29 L40,29.5z" />
+                            <path fill="#2A3820" fill-opacity="0.5" d="M64,27 L68,27.5 L68,30 L64,29.5z" />
+
+                            <path stroke="#5D4E37" stroke-width="1.3" fill="none" d="M35,37 Q54,33 73,37" />
+
+                            <path fill="#3E4E30" d="M34,40 L74,40 L74,42.5 L34,42.5z" />
+
+                            <path stroke="#2A2A2A" stroke-width="0.6" fill="none" d="M44,22 L42,14.5" />
+                            <path fill="#CC2200" d="M41.5,13.5 L42.8,13.5 L42.8,15 L41.5,15z" />
+
+                            <path fill="#B88A5C" d="M40,42 L68,42 L68,62 Q66,68 54,68 Q42,68 40,62z" />
+
+                            <path fill="#9E7548" d="M40,42 L68,42 L68,44.5 L40,44.5z" />
+
+                            <path fill="#1E1E1E" d="M42,56 L66,56 L66,64 Q64,70 54,70 Q44,70 42,64z" />
+
+                            <path stroke="#282828" stroke-width="0.3" fill="none"
+                                d="M44,58 L64,58 M44,60 L64,60 M46,62 L62,62" />
+
+                            <path fill="#222222" d="M50,52 L58,52 L58,57 L50,57z" />
+
+                            <path fill="#161616" d="M31,42 L77,42 L77,56 L31,56z" />
+
+                            <path fill="#0E0E0E" d="M33,43 L75,43 L75,55 L33,55z" />
+
+                            <path fill="#0A0A0A" d="M34,44 L52,44 L52,54 L34,54z" />
+
+                            <path fill="#0A0A0A" d="M56,44 L74,44 L74,54 L56,54z" />
+
+                            <path fill="#0D0D0D" d="M52,45.5 L56,45.5 L56,52.5 L52,52.5z" />
+
+                            <path fill="#333333"
+                                d="M53.6,46.5 m-0.45,0 a0.45,0.45 0 1,1 0.9,0 a0.45,0.45 0 1,1 -0.9,0" />
+                            <path fill="#333333"
+                                d="M53.6,51.5 m-0.45,0 a0.45,0.45 0 1,1 0.9,0 a0.45,0.45 0 1,1 -0.9,0" />
+
+                            <path fill="#1A1A1A" d="M29,44.5 L34,44.5 L34,53.5 L29,53.5z" />
+                            <path fill="#232323" d="M30,45.5 L33,45.5 L33,52.5 L30,52.5z" />
+
+                            <path fill="#1A1A1A" d="M74,44.5 L79,44.5 L79,53.5 L74,53.5z" />
+                            <path fill="#232323" d="M75,45.5 L78,45.5 L78,52.5 L75,52.5z" />
+
+                            <path stroke="#1A3050" stroke-width="0.25" stroke-opacity="0.25" fill="none"
+                                d="M35,46 L51,46 M35,48 L51,48 M35,50 L51,50 M35,52 L51,52" />
+                            <path stroke="#1A3050" stroke-width="0.25" stroke-opacity="0.25" fill="none"
+                                d="M57,46 L73,46 M57,48 L73,48 M57,50 L73,50 M57,52 L73,52" />
+
+                            <path fill="#880000" fill-opacity="0.2" d="M35,44.5 L51.5,44.5 L51.5,53.5 L35,53.5z" />
+
+                            <path fill="#BB1100" fill-opacity="0.4" d="M37,45.5 L50,45.5 L50,52.5 L37,52.5z" />
+
+                            <path fill="#EE2200" fill-opacity="0.95" d="M39,46.5 L49,46.5 L49,51.5 L39,51.5z" />
+
+                            <path fill="#FF4400" d="M40.5,47.2 L47.5,47.2 L47.5,50.8 L40.5,50.8z" />
+
+                            <path fill="#FF7700" d="M42,48 L46,48 L46,50 L42,50z" />
+
+                            <path fill="#FFBB33" d="M43.2,48.3 L44.8,48.3 L44.8,49.7 L43.2,49.7z" />
+
+                            <path fill="#FFFFFF" fill-opacity="0.8" d="M43.7,48.6 L44.3,48.6 L44.3,49.4 L43.7,49.4z" />
+
+                            <path fill="#880000" fill-opacity="0.2" d="M56.5,44.5 L73,44.5 L73,53.5 L56.5,53.5z" />
+
+                            <path fill="#BB1100" fill-opacity="0.4" d="M58,45.5 L71,45.5 L71,52.5 L58,52.5z" />
+
+                            <path fill="#EE2200" fill-opacity="0.95" d="M59,46.5 L69,46.5 L69,51.5 L59,51.5z" />
+
+                            <path fill="#FF4400" d="M60.5,47.2 L67.5,47.2 L67.5,50.8 L60.5,50.8z" />
+
+                            <path fill="#FF7700" d="M62,48 L66,48 L66,50 L62,50z" />
+
+                            <path fill="#FFBB33" d="M63.2,48.3 L64.8,48.3 L64.8,49.7 L63.2,49.7z" />
+
+                            <path fill="#FFFFFF" fill-opacity="0.8" d="M63.7,48.6 L64.3,48.6 L64.3,49.4 L63.7,49.4z" />
+
+                            <path fill="#FF0000" fill-opacity="0.05" d="M30,40 L78,40 L78,58 L30,58z" />
+
+                            <path fill="#0C140C" fill-opacity="0.35"
+                                d="M44,66 L64,66 L64,72 Q60,76 48,76 Q44,74 44,72z" />
+
+                            <path fill="#0A100A" fill-opacity="0.55"
+                                d="M46,72 L62,72 L62,78 Q58,82 50,82 Q46,80 46,78z" />
+
+                            <path fill="#080E08" fill-opacity="0.75"
+                                d="M48,78 L60,78 L60,83 Q57,87 51,87 Q48,85 48,83z" />
+
+                            <path stroke="#1A2A1A" stroke-width="2" stroke-opacity="0.35" fill="none"
+                                d="M48,80 Q45,86 48,90 Q49,92 47,94" />
+                            <path stroke="#1E2E1E" stroke-width="2.5" stroke-opacity="0.5" fill="none"
+                                d="M54,82 Q53,88 54,92 Q54.5,94 54,97" />
+                            <path stroke="#1A2A1A" stroke-width="2" stroke-opacity="0.35" fill="none"
+                                d="M60,80 Q63,86 60,90 Q59,92 61,94" />
+
+                            <path fill="#162016" fill-opacity="0.25" d="M45,88 m-1,0 a1,1 0 1,1 2,0 a1,1 0 1,1 -2,0" />
+                            <path fill="#162016" fill-opacity="0.2"
+                                d="M63,86 m-0.8,0 a0.8,0.8 0 1,1 1.6,0 a0.8,0.8 0 1,1 -1.6,0" />
+                            <path fill="#162016" fill-opacity="0.15"
+                                d="M50,92 m-0.6,0 a0.6,0.6 0 1,1 1.2,0 a0.6,0.6 0 1,1 -1.2,0" />
+                            <path fill="#162016" fill-opacity="0.12"
+                                d="M58,94 m-0.5,0 a0.5,0.5 0 1,1 1,0 a0.5,0.5 0 1,1 -1,0" />
+
+                            <path stroke="#CC2200" stroke-width="0.4" stroke-opacity="0.3" fill="none"
+                                d="M54,16 L54,40" />
+                            <path stroke="#CC2200" stroke-width="0.4" stroke-opacity="0.3" fill="none"
+                                d="M54,58 L54,74" />
+
+                            <path stroke="#CC2200" stroke-width="0.4" stroke-opacity="0.3" fill="none"
+                                d="M16,49 L29,49" />
+                            <path stroke="#CC2200" stroke-width="0.4" stroke-opacity="0.3" fill="none"
+                                d="M79,49 L92,49" />
+
+                            <path stroke="#CC2200" stroke-width="0.7" stroke-opacity="0.45" fill="none"
+                                d="M54,38 L54,40 M54,58 L54,60 M48,49 L50,49 M58,49 L60,49" />
+
+                            <path stroke="#CC2200" stroke-width="0.35" stroke-opacity="0.18" fill="none"
+                                d="M54,49 m-22,0 a22,22 0 1,1 44,0 a22,22 0 1,1 -44,0" />
+
+                            <path stroke="#CC2200" stroke-width="0.5" stroke-opacity="0.25" fill="none"
+                                d="M54,27 L54,29 M54,69 L54,71 M32,49 L34,49 M74,49 L76,49" />
+
+                            <path stroke="#1E2E1A" stroke-width="0.3" stroke-opacity="0.4" fill="none"
+                                d="M16,42 L18.5,42 M16,46 L18.5,46 M16,50 L18.5,50 M16,54 L18.5,54 M16,58 L18.5,58" />
+                            <path stroke="#1E2E1A" stroke-width="0.3" stroke-opacity="0.4" fill="none"
+                                d="M89.5,42 L92,42 M89.5,46 L92,46 M89.5,50 L92,50 M89.5,54 L92,54 M89.5,58 L92,58" />
+
+                        </svg>
+                    </div>
+                    <h3>Phantom Strike</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>7 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Phantom-Strike-Game/releases/download/v1.0.0/Phantom.Strike.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:8px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+
+                            <!-- ══════════════════════════════════════════════════════════
+       GLASS VELOCITY — Foreground Icon Layer
+       Concept: Metal ball shattering through glass panel
+       Safe zone: 72x72dp center (between 18,18 and 90,90)
+       ══════════════════════════════════════════════════════════ -->
+
+                            <!-- ── GLASS PANEL — main glass slab (slightly tilted) ──── -->
+                            <!-- Glass panel shadow/depth -->
+                            <path d="M 62,22 L 68,22 L 68,86 L 62,86 Z" fill="#0A1628" fill-opacity="0.6" />
+
+                            <!-- Glass panel bottom edge depth -->
+                            <path d="M 36,84 L 66,84 L 68,86 L 38,86 Z" fill="#0A1628" fill-opacity="0.5" />
+
+                            <!-- Main glass panel body -->
+                            <path d="M 36,22 L 62,22 L 62,84 L 36,84 Z" fill="#7BB8E8" fill-opacity="0.55" />
+
+                            <!-- Glass gradient overlay — top-left bright reflection -->
+                            <path d="M 36,22 L 56,22 L 46,50 L 36,50 Z" fill="#FFFFFF" fill-opacity="0.35" />
+
+                            <!-- Glass inner reflection stripe — diagonal -->
+                            <path d="M 40,22 L 48,22 L 42,38 L 36,38 Z" fill="#FFFFFF" fill-opacity="0.55" />
+
+                            <!-- Glass bottom-right darker area (depth) -->
+                            <path d="M 50,60 L 62,60 L 62,84 L 50,84 Z" fill="#1A3050" fill-opacity="0.3" />
+
+                            <!-- Glass panel border/edge — left -->
+                            <path d="M 36,22 L 38,22 L 38,84 L 36,84 Z" fill="#FFFFFF" fill-opacity="0.6" />
+
+                            <!-- Glass panel border — top -->
+                            <path d="M 36,22 L 62,22 L 62,24 L 36,24 Z" fill="#FFFFFF" fill-opacity="0.6" />
+
+                            <!-- Glass panel border — right -->
+                            <path d="M 60,22 L 62,22 L 62,84 L 60,84 Z" fill="#AACCE8" fill-opacity="0.4" />
+
+                            <!-- ══════════════════════════════════════════════════════════
+       SHATTER CRACKS — radiating from ball impact point
+       Impact point: approx (52, 54)
+       ══════════════════════════════════════════════════════════ -->
+
+                            <!-- Crack 1 — upper right long crack -->
+                            <path d="M 52,52 L 61,32 L 62,32 L 61,31 L 52,51 Z" fill="#FFFFFF" fill-opacity="0.9" />
+
+                            <!-- Crack 2 — right crack going to edge -->
+                            <path d="M 52,54 L 62,46 L 62,48 L 53,55 Z" fill="#FFFFFF" fill-opacity="0.85" />
+
+                            <!-- Crack 3 — lower right crack -->
+                            <path d="M 52,56 L 62,68 L 62,70 L 61,70 L 51,57 Z" fill="#FFFFFF" fill-opacity="0.8" />
+
+                            <!-- Crack 4 — lower left crack -->
+                            <path d="M 50,57 L 38,76 L 37,76 L 36,77 L 36,75 L 49,56 Z" fill="#FFFFFF"
+                                fill-opacity="0.85" />
+
+                            <!-- Crack 5 — left crack going to left edge -->
+                            <path d="M 49,54 L 36,50 L 36,52 L 50,55 Z" fill="#FFFFFF" fill-opacity="0.8" />
+
+                            <!-- Crack 6 — upper left crack -->
+                            <path d="M 50,52 L 40,36 L 41,35 L 51,51 Z" fill="#FFFFFF" fill-opacity="0.9" />
+
+                            <!-- Crack 7 — small upper crack branch -->
+                            <path d="M 52,51 L 58,38 L 59,38 L 53,51 Z" fill="#FFFFFF" fill-opacity="0.7" />
+
+                            <!-- Crack 8 — small lower branch -->
+                            <path d="M 51,57 L 44,68 L 45,69 L 52,58 Z" fill="#FFFFFF" fill-opacity="0.7" />
+
+                            <!-- ── SHATTER HOLE — dark void where ball punched through ── -->
+                            <!-- M 53,54 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0
+       Center: (53,54), r=6 -->
+                            <circle cx="53" cy="54" r="6" fill="#050E1C" fill-opacity="0.85" />
+
+                            <!-- Hole inner glow ring — r=7 -->
+                            <circle cx="53" cy="54" r="7" fill="#2A5888" fill-opacity="0.4" stroke="#5BC8FF"
+                                stroke-width="0.8" />
+
+                            <!-- ══════════════════════════════════════════════════════════
+       GLASS SHARDS — flying pieces
+       ══════════════════════════════════════════════════════════ -->
+
+                            <!-- Shard 1 — upper right flying piece -->
+                            <path d="M 66,28 L 74,24 L 76,32 L 68,34 Z" fill="#7BB8E8" fill-opacity="0.7" />
+                            <!-- Shard 1 bright edge -->
+                            <path d="M 66,28 L 74,24 L 74,25 L 67,29 Z" fill="#FFFFFF" fill-opacity="0.8" />
+
+                            <!-- Shard 2 — right middle shard -->
+                            <path d="M 67,46 L 76,42 L 78,50 L 69,52 Z" fill="#5BA8D8" fill-opacity="0.65" />
+                            <path d="M 67,46 L 76,42 L 76,43 L 68,47 Z" fill="#FFFFFF" fill-opacity="0.75" />
+
+                            <!-- Shard 3 — lower right small shard -->
+                            <path d="M 68,66 L 76,68 L 74,76 L 66,72 Z" fill="#7BB8E8" fill-opacity="0.6" />
+                            <path d="M 68,66 L 76,68 L 76,69 L 69,67 Z" fill="#FFFFFF" fill-opacity="0.7" />
+
+                            <!-- Shard 4 — upper left shard -->
+                            <path d="M 24,26 L 32,22 L 34,30 L 26,32 Z" fill="#7BB8E8" fill-opacity="0.5" />
+                            <path d="M 24,26 L 32,22 L 32,23 L 25,27 Z" fill="#FFFFFF" fill-opacity="0.7" />
+
+                            <!-- Shard 5 — lower left shard -->
+                            <path d="M 22,70 L 30,66 L 34,74 L 26,78 Z" fill="#5BA8D8" fill-opacity="0.55" />
+                            <path d="M 22,70 L 30,66 L 30,67 L 23,71 Z" fill="#FFFFFF" fill-opacity="0.65" />
+
+                            <!-- Shard 6 — tiny top shard -->
+                            <path d="M 48,16 L 54,14 L 56,20 L 50,22 Z" fill="#9BCCE8" fill-opacity="0.6" />
+                            <path d="M 48,16 L 54,14 L 54,15 L 49,17 Z" fill="#FFFFFF" fill-opacity="0.8" />
+
+                            <!-- ══════════════════════════════════════════════════════════
+       METAL BALL — chrome/steel sphere with specular shading
+       Center: (38, 54), Radius: 14
+       ══════════════════════════════════════════════════════════ -->
+
+                            <!-- Ball outer glow / aura — r=20 -->
+                            <circle cx="38" cy="54" r="20" fill="#3A80C0" fill-opacity="0.18" />
+
+                            <!-- Ball dark base (shadow) — r=15 -->
+                            <circle cx="38" cy="54" r="15" fill="#0D0D0D" fill-opacity="1" />
+
+                            <!-- Ball mid chrome layer — r=14 -->
+                            <circle cx="38" cy="54" r="14" fill="#3A3A4A" fill-opacity="1" />
+
+                            <!-- Ball chrome gradient — lighter top-left area -->
+                            <path d="M 30,44 Q 38,40 46,46 Q 50,52 44,60 Q 36,64 28,60 Q 22,54 26,46 Q 27,43 30,44 Z"
+                                fill="#8090A8" fill-opacity="0.9" />
+
+                            <!-- Ball chrome mid highlight band -->
+                            <path d="M 30,46 Q 38,42 44,48 Q 46,52 42,58 Q 36,62 30,58 Q 26,54 28,48 Z" fill="#A8B8C8"
+                                fill-opacity="0.6" />
+
+                            <!-- Ball primary specular highlight — top-left bright spot -->
+                            <path d="M 31,46 Q 36,42 40,46 Q 42,50 38,52 Q 34,54 31,50 Q 29,48 31,46 Z" fill="#E8F0F8"
+                                fill-opacity="0.85" />
+
+                            <!-- Ball hot specular center — pure white glint -->
+                            <path d="M 33,47 Q 36,44 39,47 Q 40,50 37,51 Q 34,52 33,50 Q 32,48 33,47 Z" fill="#FFFFFF"
+                                fill-opacity="0.95" />
+
+                            <!-- Ball tiny specular pinpoint — center (34,48), r=2 -->
+                            <circle cx="34" cy="48" r="2" fill="#FFFFFF" fill-opacity="1" />
+
+                            <!-- Ball secondary small specular (opposite side reflection) — center (44,60), r=2 -->
+                            <circle cx="44" cy="60" r="2" fill="#6080A0" fill-opacity="0.5" />
+
+                            <!-- Ball bottom shadow gradient for depth -->
+                            <path d="M 32,62 Q 38,66 44,62 Q 46,58 44,56 Q 38,60 32,56 Q 30,58 32,62 Z" fill="#050A14"
+                                fill-opacity="0.7" />
+
+                            <!-- Ball rim light — subtle bright edge on right side -->
+                            <path d="M 50,52 Q 52,54 51,58 Q 50,60 49,58 Q 50,54 50,52 Z" fill="#7090B0"
+                                fill-opacity="0.5" />
+
+                            <!-- ══════════════════════════════════════════════════════════
+       VELOCITY TRAIL — motion lines behind ball
+       ══════════════════════════════════════════════════════════ -->
+
+                            <!-- Trail line 1 — longest, top -->
+                            <path d="M 14,46 L 24,44 L 24,45.5 L 14,47.5 Z" fill="#5BC8FF" fill-opacity="0.7" />
+
+                            <!-- Trail line 2 — mid -->
+                            <path d="M 12,52 L 23,51 L 23,52.5 L 12,53.5 Z" fill="#5BC8FF" fill-opacity="0.55" />
+
+                            <!-- Trail line 3 — lower -->
+                            <path d="M 14,58 L 24,57 L 24,58.5 L 14,59.5 Z" fill="#5BC8FF" fill-opacity="0.4" />
+
+                            <!-- Trail line 4 — shortest, fades out -->
+                            <path d="M 8,48 L 16,47 L 16,48.5 L 8,49.5 Z" fill="#5BC8FF" fill-opacity="0.25" />
+
+                            <path d="M 8,55 L 16,54.5 L 16,56 L 8,56.5 Z" fill="#5BC8FF" fill-opacity="0.2" />
+
+                            <!-- ══════════════════════════════════════════════════════════
+       GLASS SPARKLE GLINTS — tiny light flares on shards
+       ══════════════════════════════════════════════════════════ -->
+
+                            <!-- Glint 1 — upper right shard -->
+                            <path d="M 73,26 L 75,24 L 76,26 L 74,28 Z" fill="#FFFFFF" fill-opacity="0.9" />
+                            <path d="M 74,23 L 74.5,25 L 75.5,25 L 75,23 Z" fill="#FFFFFF" fill-opacity="0.7" />
+
+                            <!-- Glint 2 — left upper shard -->
+                            <path d="M 29,23 L 31,21 L 32,23 L 30,25 Z" fill="#FFFFFF" fill-opacity="0.85" />
+
+                            <!-- Glint 3 — top small shard glint -->
+                            <path d="M 51,13 L 52,12 L 53,14 L 52,15 Z" fill="#FFFFFF" fill-opacity="0.8" />
+
+                            <!-- Glint 4 — mid right -->
+                            <path d="M 77,45 L 78,44 L 79,46 L 78,47 Z" fill="#FFFFFF" fill-opacity="0.75" />
+
+                            <!-- Glint 5 — lower right -->
+                            <path d="M 75,70 L 76,69 L 77,71 L 76,72 Z" fill="#FFFFFF" fill-opacity="0.7" />
+
+                        </svg>
+                    </div>
+                    <h3>Glass Velocity</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>22 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Glass-Velocity-Game/releases/download/v1.0.0/Glass.Velocity.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:8px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <!--
+ ╔══════════════════════════════════════════════════════════════╗
+ ║  AXE SPLITTER — Adaptive Icon Foreground                    ║
+ ║  Canvas     : 108×108                                      ║
+ ║  Safe zone  : 72×72  centred  →  from (18,18) to (90,90)  ║
+ ║  All artwork kept strictly inside (20,20)→(88,88)          ║
+ ╚══════════════════════════════════════════════════════════════╝
+-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 01 — HEX SHIELD  (safe zone: 22,22 → 86,86)
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Hex outer fill -->
+                            <path d="M54,22 L82,37 L82,71 L54,86 L26,71 L26,37 Z" fill="#0D0420" />
+
+                            <!-- Hex border glow — outer purple -->
+                            <path d="M54,22 L82,37 L82,71 L54,86 L26,71 L26,37 Z" fill="none" stroke="#7B2FFF"
+                                stroke-width="1.6" opacity="0.85" />
+
+                            <!-- Hex border glow — inner lavender -->
+                            <path d="M54,22 L82,37 L82,71 L54,86 L26,71 L26,37 Z" fill="none" stroke="#BF6AFF"
+                                stroke-width="0.5" opacity="0.65" />
+
+                            <!-- Inner hex dark fill -->
+                            <path d="M54,27 L78,40 L78,68 L54,81 L30,68 L30,40 Z" fill="#12063A" opacity="0.95" />
+
+                            <!-- Inner hex ring accent -->
+                            <path d="M54,27 L78,40 L78,68 L54,81 L30,68 L30,40 Z" fill="none" stroke="#4A1A88"
+                                stroke-width="0.4" opacity="0.5" />
+
+                            <!-- Hex corner diamonds -->
+                            <!-- top -->
+                            <path d="M54,22 L56,26 L54,29 L52,26 Z" fill="#BF6AFF" opacity="0.9" />
+                            <!-- bottom -->
+                            <path d="M54,86 L56,83 L54,80 L52,83 Z" fill="#BF6AFF" opacity="0.9" />
+                            <!-- top-right -->
+                            <path d="M82,37 L85,39 L82,42 L79,39 Z" fill="#FF6B35" opacity="0.85" />
+                            <!-- top-left -->
+                            <path d="M26,37 L29,39 L26,42 L23,39 Z" fill="#FF6B35" opacity="0.85" />
+                            <!-- bottom-right -->
+                            <path d="M82,71 L85,69 L82,66 L79,69 Z" fill="#00D4FF" opacity="0.8" />
+                            <!-- bottom-left -->
+                            <path d="M26,71 L29,69 L26,66 L23,69 Z" fill="#00D4FF" opacity="0.8" />
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 02 — AXE HANDLE
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Handle shadow -->
+                            <path d="M58,63 L62,63 L70,83 L66,83 Z" fill="#000000" opacity="0.55" />
+
+                            <!-- Handle dark base -->
+                            <path d="M56,61 L60,61 L68,81 L64,81 Z" fill="#1A0800" />
+
+                            <!-- Handle main wood -->
+                            <path d="M55,60 L59,60 L67,80 L63,80 Z" fill="#4A1E00" />
+
+                            <!-- Handle left highlight strip -->
+                            <path d="M55,60 L57,60 L65,80 L63,80 Z" fill="#7A3010" opacity="0.72" />
+
+                            <!-- Neon wrap band 1 — purple -->
+                            <path d="M56,65 L59,65 L60,69 L57,69 Z" fill="#7B2FFF" opacity="0.92" />
+
+                            <!-- Neon wrap band 2 — cyan -->
+                            <path d="M59,72 L62,72 L63,76 L60,76 Z" fill="#00D4FF" opacity="0.88" />
+
+                            <!-- Pommel cap -->
+                            <path d="M63,78 L68,78 L70,84 L61,84 Z" fill="#0A0A0A" />
+                            <path d="M63,79 L67,79 L69,83 L62,83 Z" fill="#7B2FFF" opacity="0.72" />
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 03 — AXE BLADE
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Blade ambient shadow -->
+                            <path d="M38,30 L74,44 L72,70 L50,74 L30,60 L32,36 Z" fill="#000000" opacity="0.48" />
+
+                            <!-- Blade steel base -->
+                            <path d="M36,28 L72,42 L70,68 L48,72 L28,58 L30,34 Z" fill="#5A6E82" />
+
+                            <!-- Blade sheen layer -->
+                            <path d="M36,28 L72,42 L70,68 L48,72 L28,58 L30,34 Z" fill="#8AAABF" opacity="0.42" />
+
+                            <!-- Blade upper-left bright reflection -->
+                            <path d="M36,28 L62,38 L60,52 L38,48 L28,38 L30,30 Z" fill="#C8E4F8" opacity="0.58" />
+
+                            <!-- Specular hotspot -->
+                            <path d="M40,30 L58,38 L56,48 L40,44 L34,36 Z" fill="#FFFFFF" opacity="0.32" />
+
+                            <!-- Blade lower dark zone -->
+                            <path d="M44,58 L70,66 L70,68 L48,72 L36,64 Z" fill="#3A4A58" opacity="0.6" />
+
+                            <!-- Poll face — right side of blade -->
+                            <path d="M70,42 L75,44 L73,68 L68,67 Z" fill="#445566" />
+
+                            <!-- Poll dark bevel -->
+                            <path d="M68,42 L72,43 L70,68 L66,67 Z" fill="#2A3A4A" opacity="0.85" />
+
+                            <!-- Poll top glint -->
+                            <path d="M70,42 L74,44 L73,50 L69,48 Z" fill="#7A9AB0" opacity="0.65" />
+
+                            <!-- Top spine highlight -->
+                            <path d="M36,28 L72,42 L71,46 L35,32 Z" fill="#FFFFFF" opacity="0.48" />
+
+                            <!-- Fuller groove upper -->
+                            <path d="M46,40 L68,48 L67,51 L45,43 Z" fill="#2A3A4A" opacity="0.5" />
+                            <path d="M46,40 L68,48 L68,49 L46,41 Z" fill="#FFFFFF" opacity="0.18" />
+
+                            <!-- Fuller groove lower -->
+                            <path d="M44,54 L68,62 L67,65 L43,57 Z" fill="#2A3A4A" opacity="0.4" />
+
+                            <!-- Cutting edge — bright white fill -->
+                            <path d="M28,58 L48,72 L50,70 L30,56 Z" fill="#E0F4FF" opacity="0.98" />
+
+                            <!-- Cutting edge bevel -->
+                            <path d="M29,58 L48,70 L49,68 L30,57 Z" fill="#FFFFFF" opacity="0.58" />
+
+                            <!-- Beard curve -->
+                            <path d="M48,72 Q38,76 28,58 Q36,64 44,70 Z" fill="#8AAABF" opacity="0.68" />
+
+                            <!-- Steel scratch marks -->
+                            <path d="M50,44 L62,50" fill="none" stroke="#AABBC8" stroke-width="0.45" opacity="0.28" />
+                            <path d="M48,54 L64,60" fill="none" stroke="#AABBC8" stroke-width="0.4" opacity="0.22" />
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 04 — NEON CUTTING EDGE GLOW
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Glow outer diffuse -->
+                            <path d="M26,58 L46,73" fill="none" stroke="#4400AA" stroke-width="6" opacity="0.16" />
+
+                            <!-- Glow wide band -->
+                            <path d="M27,58 L47,72" fill="none" stroke="#7B2FFF" stroke-width="3.5" opacity="0.35" />
+
+                            <!-- Glow mid band -->
+                            <path d="M28,58 L48,72" fill="none" stroke="#9B4FFF" stroke-width="2" opacity="0.58" />
+
+                            <!-- Glow sharp line -->
+                            <path d="M28,58 L48,71" fill="none" stroke="#BF6AFF" stroke-width="1" opacity="0.85" />
+
+                            <!-- Glow core white -->
+                            <path d="M29,58 L48,70" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.55" />
+
+                            <!-- Cyan tip flicker -->
+                            <path d="M28,58 L34,64" fill="none" stroke="#00D4FF" stroke-width="1.8" opacity="0.62" />
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 05 — RUNE ETCH ON BLADE
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Rune soft glow -->
+                            <path d="M50,36 L46,58" fill="none" stroke="#4400AA" stroke-width="4" opacity="0.16" />
+
+                            <!-- Rune vertical -->
+                            <path d="M50,36 L46,58" fill="none" stroke="#7B2FFF" stroke-width="1.5" opacity="0.72" />
+
+                            <!-- Rune top branch left -->
+                            <path d="M50,43 L43,40" fill="none" stroke="#7B2FFF" stroke-width="1.3" opacity="0.68" />
+
+                            <!-- Rune top branch right -->
+                            <path d="M50,43 L57,40" fill="none" stroke="#00D4FF" stroke-width="1.0" opacity="0.52" />
+
+                            <!-- Rune lower branch left -->
+                            <path d="M48,52 L41,49" fill="none" stroke="#7B2FFF" stroke-width="1.1" opacity="0.60" />
+
+                            <!-- Rune lower branch right -->
+                            <path d="M48,52 L55,49" fill="none" stroke="#00D4FF" stroke-width="0.9" opacity="0.44" />
+
+                            <!-- Rune node top  cx=50 cy=36 r=1.6 -->
+                            <circle cx="50" cy="36" r="1.6" fill="#BF6AFF" opacity="0.92" />
+
+                            <!-- Rune node mid  cx=49 cy=47 r=1.2 -->
+                            <circle cx="49" cy="47" r="1.2" fill="#00D4FF" opacity="0.88" />
+
+                            <!-- Rune node bot  cx=46 cy=58 r=1.0 -->
+                            <circle cx="46" cy="58" r="1.0" fill="#7B2FFF" opacity="0.85" />
+
+                            <!-- Rune sheen -->
+                            <path d="M50,36 L46,58" fill="none" stroke="#E0AAFF" stroke-width="0.4" opacity="0.45" />
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 06 — IMPACT STARBURST
+         Centre: cx=70 cy=34
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Starburst ambient halo  cx=70 cy=34 r=10 -->
+                            <circle cx="70" cy="34" r="10" fill="#FFD700" opacity="0.1" />
+
+                            <!-- Starburst mid halo  r=7 -->
+                            <circle cx="70" cy="34" r="7" fill="#FFD700" opacity="0.15" />
+
+                            <!-- Main 10-point starburst gold -->
+                            <path d="M70,24 L72,29 L77,26 L74,31
+           L80,32 L75,35 L80,38 L74,39
+           L77,44 L72,41 L70,46 L68,41
+           L63,44 L66,39 L60,38 L65,35
+           L60,32 L66,31 L63,26 L68,29 Z" fill="#FFD700" opacity="0.97" />
+
+                            <!-- Starburst orange layer -->
+                            <path d="M70,26 L72,30 L76,28 L74,32
+           L79,33 L75,35 L79,37 L74,38
+           L76,42 L72,40 L70,44 L68,40
+           L64,42 L66,38 L61,37 L65,35
+           L61,33 L66,32 L64,28 L68,30 Z" fill="#FF6B35" opacity="0.42" />
+
+                            <!-- Starburst inner white -->
+                            <path d="M70,28 L72,32 L75,30 L73,33
+           L77,34 L74,35 L77,36 L73,37
+           L75,40 L72,38 L70,42 L68,38
+           L65,40 L67,37 L63,36 L66,35
+           L63,34 L67,33 L65,30 L68,32 Z" fill="#FFFFFF" opacity="0.78" />
+
+                            <!-- Long spike — top -->
+                            <path d="M69,22 L70,17 L71,22 Z" fill="#FFD700" opacity="0.88" />
+
+                            <!-- Long spike — right -->
+                            <path d="M80,33 L86,30 L81,37 Z" fill="#FF9900" opacity="0.78" />
+
+                            <!-- Long spike — top-right -->
+                            <path d="M76,27 L82,22 L79,30 Z" fill="#FF9900" opacity="0.72" />
+
+                            <!-- Long spike — bottom -->
+                            <path d="M69,46 L70,52 L71,46 Z" fill="#FFD700" opacity="0.72" />
+
+                            <!-- Long spike — left -->
+                            <path d="M60,33 L54,30 L60,37 Z" fill="#FFD700" opacity="0.68" />
+
+                            <!-- Micro spark A  cx=84 cy=26 r=1.2 -->
+                            <circle cx="84" cy="26" r="1.2" fill="#FFE566" opacity="0.8" />
+
+                            <!-- Micro spark B  cx=56 cy=26 r=1.0 -->
+                            <circle cx="56" cy="26" r="1.0" fill="#FFD700" opacity="0.72" />
+
+                            <!-- Micro spark C  cx=85 cy=40 r=0.9 -->
+                            <circle cx="85" cy="40" r="0.9" fill="#FF9900" opacity="0.65" />
+
+                            <!-- Scatter spark diamond -->
+                            <path d="M84,28 L86,24 L88,28 L86,32 Z" fill="#FFD700" opacity="0.78" />
+
+                            <!-- ═══════════════════════════════════════════════════════
+         LAYER 07 — AMBIENT NEON PARTICLES
+    ════════════════════════════════════════════════════════════ -->
+
+                            <!-- Orb A purple  cx=32 cy=34 r=2.2 -->
+                            <circle cx="32" cy="34" r="2.2" fill="#7B2FFF" opacity="0.68" />
+                            <!-- Orb A inner  r=1.0 -->
+                            <circle cx="32" cy="34" r="1.0" fill="#FFFFFF" opacity="0.55" />
+
+                            <!-- Orb B cyan  cx=32 cy=74 r=2.0 -->
+                            <circle cx="32" cy="74" r="2.0" fill="#00D4FF" opacity="0.62" />
+                            <!-- Orb B inner  r=0.9 -->
+                            <circle cx="32" cy="74" r="0.9" fill="#FFFFFF" opacity="0.5" />
+
+                            <!-- Orb C purple  cx=76 cy=74 r=2.0 -->
+                            <circle cx="76" cy="74" r="2.0" fill="#7B2FFF" opacity="0.58" />
+
+                            <!-- Orb D gold  cx=76 cy=54 r=1.6 -->
+                            <circle cx="76" cy="54" r="1.6" fill="#FFD700" opacity="0.52" />
+
+                            <!-- Sparkle cross — left side -->
+                            <path d="M30,52 L28,56 L30,60 L32,56 Z" fill="#7B2FFF" opacity="0.62" />
+                            <path d="M26,56 L30,54 L34,56 L30,58 Z" fill="#7B2FFF" opacity="0.62" />
+
+                            <!-- Sparkle cross — right-bottom -->
+                            <path d="M76,62 L74,66 L76,70 L78,66 Z" fill="#00D4FF" opacity="0.58" />
+                            <path d="M72,66 L76,64 L80,66 L76,68 Z" fill="#00D4FF" opacity="0.58" />
+
+                            <!-- Sparkle cross — top-left -->
+                            <path d="M32,38 L30,42 L32,46 L34,42 Z" fill="#FF6B35" opacity="0.5" />
+                            <path d="M28,42 L32,40 L36,42 L32,44 Z" fill="#FF6B35" opacity="0.5" />
+
+                        </svg>
+                    </div>
+                    <h3>Axe Splitter</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>30 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Axe-Splitter-Game/releases/download/v1.0.0/Axe.Splitter.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:8px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+
+                            <!-- Shadow -->
+                            <ellipse cx="50" cy="96" rx="32" ry="6" fill="rgba(0,0,0,0.25)" />
+
+                            <!-- Wings (accentColor #E65100) -->
+                            <rect x="2" y="52" width="18" height="36" rx="6" fill="#E65100" />
+                            <rect x="80" y="52" width="18" height="36" rx="6" fill="#E65100" />
+                            <!-- Wing highlights -->
+                            <rect x="4" y="54" width="12" height="16" rx="4" fill="#FF7043" />
+                            <rect x="82" y="54" width="12" height="16" rx="4" fill="#FF7043" />
+
+                            <!-- Tail feathers -->
+                            <path d="M35 88 L20 112 L35 104 L50 118 L65 104 L80 112 L65 88 Z" fill="#BF360C" />
+
+                            <!-- Body (bodyColor #FF8F00 with bodyHighlight #FFD54F radial) -->
+                            <defs>
+                                <radialGradient id="bodyGrad" cx="32%" cy="28%" r="88%">
+                                    <stop offset="0%" stop-color="#FFD54F" />
+                                    <stop offset="100%" stop-color="#FF8F00" />
+                                </radialGradient>
+                                <!-- Top gloss -->
+                                <linearGradient id="glossGrad" x1="10%" y1="5%" x2="90%" y2="32%">
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0.33)" />
+                                    <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="10" width="80" height="80" rx="20" fill="url(#bodyGrad)" />
+
+                            <!-- Body gloss highlight -->
+                            <rect x="12" y="12" width="76" height="26" rx="16" fill="url(#glossGrad)" />
+
+                            <!-- Comb (red spiky) -->
+                            <path d="M35 12 L40 -2 L46 10 L50 -4 L56 10 L62 -2 L67 12 Z" fill="#E53935" />
+
+                            <!-- Wattle -->
+                            <ellipse cx="50" cy="64" rx="9" ry="10" fill="#E53935" />
+
+                            <!-- Beak -->
+                            <path d="M34 52 L66 52 L50 66 Z" fill="#FF8F00" />
+                            <path d="M36 52 L62 52 L50 60 Z" fill="#FFB300" />
+
+                            <!-- ── EYES ─────────────────────────────────────────────────────── -->
+
+                            <!-- Left Eye white sclera -->
+                            <circle cx="30" cy="36" r="13" fill="white" />
+                            <!-- Right Eye white sclera -->
+                            <circle cx="70" cy="36" r="13" fill="white" />
+
+                            <!-- Left Pupil — pure black -->
+                            <circle cx="30" cy="36" r="7" fill="#000000" />
+                            <!-- Right Pupil — pure black -->
+                            <circle cx="70" cy="36" r="7" fill="#000000" />
+
+                            <!-- Left Eye white highlight dot (top-left of pupil) -->
+                            <circle cx="25" cy="31" r="3" fill="white" />
+                            <!-- Right Eye white highlight dot -->
+                            <circle cx="65" cy="31" r="3" fill="white" />
+
+                            <!-- Left Eye small secondary highlight (bottom-right sparkle) -->
+                            <circle cx="33" cy="40" r="1.5" fill="white" opacity="0.6" />
+                            <!-- Right Eye small secondary highlight -->
+                            <circle cx="73" cy="40" r="1.5" fill="white" opacity="0.6" />
+
+                            <!-- ── END EYES ───────────────────────────────────────────────── -->
+
+                        </svg>
+                    </div>
+                    <h3>Toon Crosser</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>15 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Toon-Crosser-Game/releases/download/v1.0.0/Toon.Crosser.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="wrap">
+            <div class="sec-top">
+                <h2>📱 Top Apps</h2><a href="apps.html">All Apps →</a>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-ico"
+                        style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:8px;display:flex;align-items:center;justify-content:center;border-radius:12px;">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+
+                            <!-- ═══════════════════════════════════
+         SAFE ZONE: 72x72dp centered
+         ═══════════════════════════════════ -->
+
+                            <!-- Background fill -->
+                            <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+
+                            <!-- Outer subtle ring -->
+                            <path fill="none" stroke="#1E3A5F" stroke-width="2"
+                                d="M54,54m-48,0a48,48 0,1 1,96 0a48,48 0,1 1,-96 0" />
+
+                            <!-- ═══════════════════════════════════
+         GAUGE TRACK
+         ═══════════════════════════════════ -->
+                            <path fill="none" stroke="#161D3A" stroke-width="7" stroke-linecap="round"
+                                d="M16,64 A38,38 0,1,1 92,64" />
+
+                            <!-- Segment Blue -->
+                            <path fill="none" stroke="#0066FF" stroke-width="7" stroke-linecap="round"
+                                d="M16,64 A38,38 0,0,1 28,30" />
+
+                            <!-- Segment Cyan -->
+                            <path fill="none" stroke="#00D4FF" stroke-width="7" stroke-linecap="round"
+                                d="M28,30 A38,38 0,0,1 54,16" />
+
+                            <!-- Segment Green -->
+                            <path fill="none" stroke="#00FF88" stroke-width="7" stroke-linecap="round"
+                                d="M54,16 A38,38 0,0,1 80,30" />
+
+                            <!-- Segment Orange -->
+                            <path fill="none" stroke="#FF6B35" stroke-width="7" stroke-linecap="round"
+                                d="M80,30 A38,38 0,0,1 92,64" />
+
+                            <!-- ═══════════════════════════════════
+         NEEDLE
+         ═══════════════════════════════════ -->
+                            <!-- Needle shadow/glow -->
+                            <path fill="none" stroke="#FF6B3566" stroke-width="4" stroke-linecap="round"
+                                d="M54,54 L78,30" />
+
+                            <!-- Needle -->
+                            <path fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"
+                                d="M54,54 L78,30" />
+
+                            <!-- Needle tip -->
+                            <path fill="#FF6B35" d="M78,30m-3.5,0a3.5,3.5 0,1 1,7 0a3.5,3.5 0,1 1,-7 0" />
+
+                            <!-- ═══════════════════════════════════
+         CENTER HUB
+         ═══════════════════════════════════ -->
+                            <path fill="#0A0E27" stroke="#00D4FF" stroke-width="2"
+                                d="M54,54m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0" />
+
+                            <path fill="#00D4FF" d="M54,54m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
+
+                            <path fill="#FFFFFF" d="M54,54m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+
+                            <!-- ═══════════════════════════════════
+         SIGNAL BARS
+         ═══════════════════════════════════ -->
+                            <path fill="#00D4FF" fill-opacity="0.5" d="M22,76 L25,76 L25,82 L22,82 Z" />
+                            <path fill="#00D4FF" fill-opacity="0.65" d="M27,73 L30,73 L30,82 L27,82 Z" />
+                            <path fill="#00D4FF" fill-opacity="0.8" d="M32,69 L35,69 L35,82 L32,82 Z" />
+                            <path fill="#00D4FF" d="M37,65 L40,65 L40,82 L37,82 Z" />
+
+                            <!-- ═══════════════════════════════════
+         PING WAVE
+         ═══════════════════════════════════ -->
+                            <path fill="none" stroke="#00FF88" stroke-width="2" stroke-linecap="round"
+                                stroke-opacity="0.5" d="M72,76 Q76,70 80,76" />
+                            <path fill="none" stroke="#00FF88" stroke-width="2" stroke-linecap="round"
+                                stroke-opacity="0.8" d="M68,80 Q74,71 80,80" />
+                            <path fill="#00FF88" d="M76,76m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+                        </svg>
+                    </div>
+                    <h3>Signal Test Speed & Ping</h3>
+                    <div class="sub">Lihka Games</div>
+                    <div class="meta"><b>⭐ 4.9</b><span>15 MB</span></div>
+                    <a href="https://github.com/LihkaGames/Signal-Test-Speed-Ping-App/releases/download/v1.0.0/Signal.Test.Speed.Ping.apk"
+                        class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">📝</div>
+                    <h3>CloudNote Plus</h3>
+                    <div class="sub">ProductivityPro</div>
+                    <div class="meta"><b>⭐ 4.6</b><span>28 MB</span></div><a href="#" class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#f5576c,#ff9a9e)">💪</div>
+                    <h3>FitTrack Health</h3>
+                    <div class="sub">HealthTech</div>
+                    <div class="meta"><b>⭐ 4.3</b><span>42 MB</span></div><a href="#" class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#a855f7,#6366f1)">🎵</div>
+                    <h3>MusicBox Stream</h3>
+                    <div class="sub">SoundWave</div>
+                    <div class="meta"><b>⭐ 4.5</b><span>55 MB</span></div><a href="#" class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#ff0844,#ffb199)">🎬</div>
+                    <h3>VideoMaker</h3>
+                    <div class="sub">CreativeApps</div>
+                    <div class="meta"><b>⭐ 4.6</b><span>68 MB</span></div><a href="#" class="dl">⬇ Download</a>
+                </div>
+                <div class="card">
+                    <div class="card-ico" style="background:linear-gradient(135deg,#667eea,#764ba2)">💬</div>
+                    <h3>Social Connect</h3>
+                    <div class="sub">NetSphere</div>
+                    <div class="meta"><b>⭐ 4.0</b><span>40 MB</span></div><a href="#" class="dl">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="wrap">
+            <div class="sec-top">
+                <h2>📈 Top Charts</h2><a href="trending.html">Full Rankings →</a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:20px">
+                <div>
+                    <h3 style="font-size:1rem;margin-bottom:12px;color:#888">🏆 Top Games</h3>
+                    <div class="lst">
+                        <!-- Blitz Storm Arena - Top Charts -->
+                        <div class="lst-item"><span class="num top">1</span>
+                            <div class="ico" style="background:linear-gradient(135deg,#0D1117,#1a1a2e)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                                    <path d="M54,18 L86,30 L90,54 L82,74 L54,94 L26,74 L18,54 L22,30 Z" fill="#FFD700"
+                                        stroke="#FFF176" stroke-width="0.8" />
+                                    <path d="M54,22 L83,33 L87,54 L80,72 L54,90 L28,72 L21,54 L25,33 Z"
+                                        fill="#0D1117" />
+                                    <path d="M62,26 L47,52 L58,51 L42,82 L70,54 L58,55 Z" fill="#FFD700" />
+                                    <path d="M60,32 L49,50 L57,49 L45,76 L66,56 L57,57 Z" fill="#FFEC80" />
+                                    <path d="M58,38 L51,49 L56,48 L48,70 L62,57 L57,58 Z" fill="#FFFDE7" />
+                                    <path d="M35,40 L32,47 L37,45 L34,52" stroke="#FFD700" stroke-width="1.2"
+                                        fill="none" stroke-linecap="round" />
+                                    <path d="M73,40 L76,47 L71,45 L74,52" stroke="#FFD700" stroke-width="1.2"
+                                        fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <h4>Blitz Storm Arena</h4><small>⭐ 4.7 &bull; 10 MB</small>
+                            </div>
+                            <a href="https://github.com/LihkaGames/Blitz-Storm-Arena/raw/refs/heads/main/Blitz%20Storm%20Arena.apk"
+                                class="dl" download>⬇ Download</a>
+                        </div>
+
+                        <!-- Roll Master Quest - Top Charts -->
+                        <div class="lst-item"><span class="num top">2</span>
+                            <div class="ico"
+                                style="background:linear-gradient(135deg,#251a3d,#1f0b36);padding:4px;display:flex;align-items:center;justify-content:center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                                    <defs>
+                                        <linearGradient id="t-redQ" x1="34" y1="28" x2="50" y2="44"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FF6B6B" />
+                                            <stop offset="1" stop-color="#EE5A52" />
+                                        </linearGradient>
+                                        <linearGradient id="t-greenQ" x1="58" y1="28" x2="74" y2="44"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#69DB7C" />
+                                            <stop offset="1" stop-color="#51CF66" />
+                                        </linearGradient>
+                                        <linearGradient id="t-yellowQ" x1="34" y1="52" x2="50" y2="68"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFE066" />
+                                            <stop offset="1" stop-color="#FFD43B" />
+                                        </linearGradient>
+                                        <linearGradient id="t-blueQ" x1="58" y1="52" x2="74" y2="68"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#74C0FC" />
+                                            <stop offset="1" stop-color="#4DABF7" />
+                                        </linearGradient>
+                                        <linearGradient id="t-centerD" x1="50" y1="44" x2="58" y2="52"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFD700" />
+                                            <stop offset="1" stop-color="#FFA000" />
+                                        </linearGradient>
+                                        <radialGradient id="t-rT1" cx="38" cy="32" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FF8787" />
+                                            <stop offset="1" stop-color="#C92A2A" />
+                                        </radialGradient>
+                                        <radialGradient id="t-rT2" cx="44" cy="38" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FF8787" />
+                                            <stop offset="1" stop-color="#C92A2A" />
+                                        </radialGradient>
+                                        <radialGradient id="t-gT1" cx="62" cy="32" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#8CE99A" />
+                                            <stop offset="1" stop-color="#2B8A3E" />
+                                        </radialGradient>
+                                        <radialGradient id="t-gT2" cx="68" cy="38" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#8CE99A" />
+                                            <stop offset="1" stop-color="#2B8A3E" />
+                                        </radialGradient>
+                                        <radialGradient id="t-yT1" cx="38" cy="56" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFE066" />
+                                            <stop offset="1" stop-color="#F59F00" />
+                                        </radialGradient>
+                                        <radialGradient id="t-yT2" cx="44" cy="62" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFE066" />
+                                            <stop offset="1" stop-color="#F59F00" />
+                                        </radialGradient>
+                                        <radialGradient id="t-bT1" cx="62" cy="56" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#74C0FC" />
+                                            <stop offset="1" stop-color="#1864AB" />
+                                        </radialGradient>
+                                        <radialGradient id="t-bT2" cx="68" cy="62" r="4" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#74C0FC" />
+                                            <stop offset="1" stop-color="#1864AB" />
+                                        </radialGradient>
+                                        <linearGradient id="t-crownG" x1="42" y1="11" x2="66" y2="20"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFD700" />
+                                            <stop offset="0.5" stop-color="#FFEC80" />
+                                            <stop offset="1" stop-color="#FFA000" />
+                                        </linearGradient>
+                                        <linearGradient id="t-crownB" x1="42" y1="20" x2="66" y2="23"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFA000" />
+                                            <stop offset="1" stop-color="#FF8F00" />
+                                        </linearGradient>
+                                        <linearGradient id="t-diceL" x1="17.5" y1="70" x2="32.5" y2="85"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFFFFF" />
+                                            <stop offset="1" stop-color="#F1F3F5" />
+                                        </linearGradient>
+                                        <linearGradient id="t-diceR" x1="75.5" y1="72" x2="90.5" y2="87"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFFFFF" />
+                                            <stop offset="1" stop-color="#F1F3F5" />
+                                        </linearGradient>
+                                        <radialGradient id="t-outerGlow" cx="54" cy="48" r="28"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#FFD700" stop-opacity="0" />
+                                            <stop offset="0.8" stop-color="#FFD700" stop-opacity="0.2" />
+                                            <stop offset="1" stop-color="#FFD700" stop-opacity="0" />
+                                        </radialGradient>
+                                    </defs>
+                                    <path d="M36,30h36v48h-36z" fill="#000000" fill-opacity="0.08" />
+                                    <path d="M34,28h16v16h-16z" fill="url(#t-redQ)" />
+                                    <path d="M34,28h16v16h-16z" stroke-width="0.5" stroke="#D63031" fill="none" />
+                                    <path d="M58,28h16v16h-16z" fill="url(#t-greenQ)" />
+                                    <path d="M58,28h16v16h-16z" stroke-width="0.5" stroke="#2B8A3E" fill="none" />
+                                    <path d="M34,52h16v16h-16z" fill="url(#t-yellowQ)" />
+                                    <path d="M34,52h16v16h-16z" stroke-width="0.5" stroke="#F59F00" fill="none" />
+                                    <path d="M58,52h16v16h-16z" fill="url(#t-blueQ)" />
+                                    <path d="M58,52h16v16h-16z" stroke-width="0.5" stroke="#1864AB" fill="none" />
+                                    <path d="M50,28h8v16h-8z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                                    <path d="M50,52h8v16h-8z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                                    <path d="M34,44h16v8h-16z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                                    <path d="M58,44h16v8h-16z" fill="#FFFFFF" stroke-width="0.3" stroke="#E0E0E0" />
+                                    <path d="M50,44h8v8h-8z" fill="url(#t-centerD)" />
+                                    <path d="M54,44L50,48L58,48Z" fill="#EE5A52" fill-opacity="0.85" />
+                                    <path d="M58,48L54,44L54,52Z" fill="#51CF66" fill-opacity="0.85" />
+                                    <path d="M54,52L58,48L50,48Z" fill="#339AF0" fill-opacity="0.85" />
+                                    <path d="M50,48L54,52L54,44Z" fill="#FFD43B" fill-opacity="0.85" />
+                                    <path d="M54,44L58,48L54,52L50,48Z" stroke-width="0.6" stroke="#E67700"
+                                        fill="none" />
+                                    <circle cx="54" cy="48" r="1.8" fill="#FFFFFF" fill-opacity="0.9" />
+                                    <circle cx="39" cy="33" r="3.5" fill="url(#t-rT1)" />
+                                    <circle cx="39" cy="33" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="45" cy="39" r="3.5" fill="url(#t-rT2)" />
+                                    <circle cx="45" cy="39" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="63" cy="33" r="3.5" fill="url(#t-gT1)" />
+                                    <circle cx="63" cy="33" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="69" cy="39" r="3.5" fill="url(#t-gT2)" />
+                                    <circle cx="69" cy="39" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="39" cy="57" r="3.5" fill="url(#t-yT1)" />
+                                    <circle cx="39" cy="57" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="45" cy="63" r="3.5" fill="url(#t-yT2)" />
+                                    <circle cx="45" cy="63" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="63" cy="57" r="3.5" fill="url(#t-bT1)" />
+                                    <circle cx="63" cy="57" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <circle cx="69" cy="63" r="3.5" fill="url(#t-bT2)" />
+                                    <circle cx="69" cy="63" r="1.3" fill="#FFFFFF" fill-opacity="0.6" />
+                                    <path d="M42,20L43.5,14L47,18L50.5,11L54,17L57.5,11L61,18L64.5,14L66,20Z"
+                                        fill="url(#t-crownG)" stroke-width="0.5" stroke="#BF8F00" />
+                                    <rect x="42" y="20" width="24" height="3" fill="url(#t-crownB)" />
+                                    <circle cx="47" cy="17.5" r="1.5" fill="#EE5A52" />
+                                    <circle cx="54" cy="16.5" r="1.8" fill="#339AF0" />
+                                    <circle cx="61" cy="17.5" r="1.5" fill="#51CF66" />
+                                    <circle cx="47" cy="17.5" r="0.6" fill="#FFFFFF" fill-opacity="0.5" />
+                                    <circle cx="54" cy="16.5" r="0.7" fill="#FFFFFF" fill-opacity="0.5" />
+                                    <circle cx="61" cy="17.5" r="0.6" fill="#FFFFFF" fill-opacity="0.5" />
+                                    <rect x="17.5" y="70" width="15" height="15" rx="2.5" ry="2.5"
+                                        fill="url(#t-diceL)" />
+                                    <rect x="17.5" y="70" width="15" height="15" rx="2.5" ry="2.5" stroke-width="0.5"
+                                        stroke="#CED4DA" fill="none" />
+                                    <circle cx="22" cy="73.5" r="1.2" fill="#C92A2A" />
+                                    <circle cx="22" cy="77.5" r="1.2" fill="#C92A2A" />
+                                    <circle cx="22" cy="81.5" r="1.2" fill="#C92A2A" />
+                                    <circle cx="28" cy="73.5" r="1.2" fill="#C92A2A" />
+                                    <circle cx="28" cy="77.5" r="1.2" fill="#C92A2A" />
+                                    <circle cx="28" cy="81.5" r="1.2" fill="#C92A2A" />
+                                    <rect x="75.5" y="72" width="15" height="15" rx="2.5" ry="2.5"
+                                        fill="url(#t-diceR)" />
+                                    <rect x="75.5" y="72" width="15" height="15" rx="2.5" ry="2.5" stroke-width="0.5"
+                                        stroke="#CED4DA" fill="none" />
+                                    <circle cx="80" cy="75" r="1.2" fill="#1864AB" />
+                                    <circle cx="86" cy="75" r="1.2" fill="#1864AB" />
+                                    <circle cx="83" cy="79.5" r="1.2" fill="#1864AB" />
+                                    <circle cx="80" cy="84" r="1.2" fill="#1864AB" />
+                                    <circle cx="86" cy="84" r="1.2" fill="#1864AB" />
+                                    <path d="M28,30L29,27L30,30L33,31L30,32L29,35L28,32L25,31Z" fill="#FFD700"
+                                        fill-opacity="0.7" />
+                                    <path d="M78,28L79,25.5L80,28L82.5,29L80,30L79,32.5L78,30L75.5,29Z" fill="#FFD700"
+                                        fill-opacity="0.5" />
+                                    <path d="M54,88L55.5,84L57,88L61,89.5L57,91L55.5,95L54,91L50,89.5Z" fill="#FFD700"
+                                        fill-opacity="0.6" />
+                                    <circle cx="20" cy="48" r="1" fill="#FFD700" fill-opacity="0.4" />
+                                    <circle cx="88" cy="48" r="1" fill="#FFD700" fill-opacity="0.4" />
+                                    <circle cx="15" cy="60" r="0.8" fill="#FFD700" fill-opacity="0.3" />
+                                    <circle cx="93" cy="60" r="0.8" fill="#FFD700" fill-opacity="0.3" />
+                                    <path d="M37,46L38,44.5L39,46L40.5,47L39,48L38,49.5L37,48L35.5,47Z" fill="#FFD700"
+                                        fill-opacity="0.8" />
+                                    <path d="M55,31L56,29.5L57,31L58.5,32L57,33L56,34.5L55,33L53.5,32Z" fill="#FFD700"
+                                        fill-opacity="0.8" />
+                                    <path d="M69,48L70,46.5L71,48L72.5,49L71,50L70,51.5L69,50L67.5,49Z" fill="#FFD700"
+                                        fill-opacity="0.8" />
+                                    <path d="M51,63L52,61.5L53,63L54.5,64L53,65L52,66.5L51,65L49.5,64Z" fill="#FFD700"
+                                        fill-opacity="0.8" />
+                                    <circle cx="54" cy="48" r="28" stroke-width="0.8" stroke="url(#t-outerGlow)"
+                                        fill="none" />
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <h4>Roll Master Quest: Ludo Game</h4><small>⭐ 4.8 &bull; 7 MB</small>
+                            </div><a
+                                href="https://github.com/LihkaGames/Roll-Master-Quest-Ludo-Game/releases/download/v1.0.0/Roll.Master.Quest.apk"
+                                class="dl">⬇ Download</a>
+                        </div>
+
+                        <!-- Block Fusion - Top Charts -->
+                        <div class="lst-item"><span class="num top">3</span>
+                            <div class="ico" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+                                    <path
+                                        d="M16.3,88.8 Q54,99 91.7,88.8 Q94.6,81.6 91.7,74.2 Q54,64.2 16.3,74.2 Q13.4,81.6 16.3,88.8z"
+                                        fill="#000000" fill-opacity="0.12" />
+                                    <path
+                                        d="M22.1,85.9 Q54,93.2 85.9,85.9 Q88.8,80.1 85.9,75.7 Q54,68.6 22.1,75.7 Q19.2,80.1 22.1,85.9z"
+                                        fill="#000000" fill-opacity="0.08" />
+                                    <g>
+                                        <path d="M34.6,36.6 L34.6,51.1 L43.3,46.8 L43.3,32.3z" fill="#0D47A1" />
+                                        <path d="M17.2,32.3 L34.6,36.6 L43.3,32.3 L25.8,28z" fill="#42A5F5" />
+                                        <path d="M17.2,32.3 L17.2,46.8 L34.6,51.1 L34.6,36.6z" fill="#1E88E5" />
+                                    </g>
+                                    <g>
+                                        <path d="M54,40.9 L54,55.5 L62.7,51.1 L62.7,36.6z" fill="#283593" />
+                                        <path d="M36.6,36.6 L54,40.9 L62.7,36.6 L45.2,32.3z" fill="#5C6BC0" />
+                                        <path d="M36.6,36.6 L36.6,51.1 L54,55.5 L54,40.9z" fill="#3F51B5" />
+                                    </g>
+                                    <g>
+                                        <path d="M74.3,45.3 L74.3,59.8 L83,55.5 L83,40.9z" fill="#4527A0" />
+                                        <path d="M56.9,40.9 L74.3,45.3 L83,40.9 L65.6,36.6z" fill="#7E57C2" />
+                                        <path d="M56.9,40.9 L56.9,55.5 L74.3,59.8 L74.3,45.3z" fill="#673AB7" />
+                                    </g>
+                                    <g>
+                                        <path d="M34.6,48.2 L34.6,62.7 L43.3,58.4 L43.3,43.8z" fill="#00695C" />
+                                        <path d="M17.2,43.8 L34.6,48.2 L43.3,43.8 L25.8,39.5z" fill="#26A69A" />
+                                        <path d="M17.2,43.8 L17.2,58.4 L34.6,62.7 L34.6,48.2z" fill="#009688" />
+                                    </g>
+                                    <g>
+                                        <path d="M54,52.5 L54,67.1 L62.7,62.7 L62.7,48.2z" fill="#00838F" />
+                                        <path d="M36.6,48.2 L54,52.5 L62.7,48.2 L45.2,43.8z" fill="#26C6DA" />
+                                        <path d="M36.6,48.2 L36.6,62.7 L54,67.1 L54,52.5z" fill="#00BCD4" />
+                                    </g>
+                                    <g>
+                                        <path d="M74.3,56.9 L74.3,71.4 L83,67.1 L83,52.5z" fill="#AD1457" />
+                                        <path d="M56.9,52.5 L74.3,56.9 L83,52.5 L65.6,48.2z" fill="#EC407A" />
+                                        <path d="M56.9,52.5 L56.9,67.1 L74.3,71.4 L74.3,56.9z" fill="#E91E63" />
+                                    </g>
+                                    <g>
+                                        <path d="M34.6,59.8 L34.6,74.3 L43.3,70 L43.3,55.5z" fill="#2E7D32" />
+                                        <path d="M17.2,55.5 L34.6,59.8 L43.3,55.5 L25.8,51.1z" fill="#66BB6A" />
+                                        <path d="M17.2,55.5 L17.2,70 L34.6,74.3 L34.6,59.8z" fill="#4CAF50" />
+                                    </g>
+                                    <g>
+                                        <path d="M54,64.1 L54,78.7 L62.7,74.3 L62.7,59.8z" fill="#E65100" />
+                                        <path d="M36.6,59.8 L54,64.1 L62.7,59.8 L45.2,55.5z" fill="#FFA726" />
+                                        <path d="M36.6,59.8 L36.6,74.3 L54,78.7 L54,64.1z" fill="#FF9800" />
+                                    </g>
+                                    <g>
+                                        <path d="M74.3,68.5 L74.3,83 L83,78.7 L83,64.1z" fill="#B71C1C" />
+                                        <path d="M56.9,64.1 L74.3,68.5 L83,64.1 L65.6,59.8z" fill="#EF5350" />
+                                        <path d="M56.9,64.1 L56.9,78.7 L74.3,83 L74.3,68.5z" fill="#F44336" />
+                                    </g>
+                                    <path
+                                        d="M39.5,45.3 Q54,51.1 68.5,45.3 Q69.9,42.4 68.5,39.5 Q54,33.7 39.5,39.5 Q38.1,42.4 39.5,45.3z"
+                                        fill="#000000" fill-opacity="0.15" />
+                                    <g>
+                                        <path d="M56.9,27.1 L56.9,41.6 L67,37.3 L67,22.7z" fill="#F9A825" />
+                                        <path d="M39.5,22.7 L56.9,27.1 L67,22.7 L49.5,18.4z" fill="#FFEE58" />
+                                        <path d="M39.5,22.7 L39.5,37.3 L56.9,41.6 L56.9,27.1z" fill="#FFD600" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <h4>Block Fusion</h4><small>⭐ 4.7 &bull; 26 MB</small>
+                            </div>
+                            <a href="https://github.com/LihkaGames/Block-Fusion-Game/raw/refs/heads/main/Block%20Fusion.apk"
+                                class="dl" download>⬇ Download</a>
+                        </div>
+
+                        <!-- ✅ TURBO TRAIL RACER - TOP CHARTS WITH SVG LOGO -->
+                        <div class="lst-item"><span class="num">4</span>
+                            <div class="ico"
+                                style="background:linear-gradient(135deg,#1A237E,#0D47A1);padding:4px;display:flex;align-items:center;justify-content:center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <defs>
+                                        <clipPath id="c2">
+                                            <rect x="10" y="10" width="492" height="492" rx="56" />
+                                        </clipPath>
+                                    </defs>
+                                    <rect width="512" height="512" rx="56" fill="#1A237E" />
+                                    <rect x="10" y="10" width="492" height="492" rx="56" fill="#0D47A1" />
+                                    <g clip-path="url(#c2)">
+                                        <rect x="10" y="10" width="492" height="170" fill="#1565C0" />
+                                        <rect x="10" y="150" width="492" height="90" fill="#1976D2" />
+                                        <rect x="10" y="210" width="492" height="80" fill="#2196F3" />
+                                        <circle cx="400" cy="80" r="45" fill="#FFD54F" />
+                                        <circle cx="400" cy="80" r="35" fill="#FFECB3" />
+                                        <g fill="#FFD54F">
+                                            <path d="M400,25l4,15h-8z" />
+                                            <path d="M400,135l4-15h-8z" />
+                                            <path d="M345,80l15-4v8z" />
+                                            <path d="M455,80l-15-4v8z" />
+                                            <path d="M361,41l9,12-6,4z" />
+                                            <path d="M439,119l-9-12 6-4z" />
+                                            <path d="M439,41l-9,12 6,4z" />
+                                            <path d="M361,119l9-12-6-4z" />
+                                        </g>
+                                        <g fill="#64B5F6" opacity=".6">
+                                            <ellipse cx="80" cy="100" rx="20" ry="14" />
+                                            <ellipse cx="105" cy="95" rx="18" ry="12" />
+                                            <ellipse cx="60" cy="95" rx="15" ry="10" />
+                                        </g>
+                                        <g fill="#64B5F6" opacity=".5">
+                                            <ellipse cx="230" cy="70" rx="22" ry="15" />
+                                            <ellipse cx="258" cy="65" rx="20" ry="13" />
+                                        </g>
+                                        <path d="M10,310L100,190l50,40 50-50 80,80 50-40 90,60 82-50v80H10z"
+                                            fill="#1B5E20" opacity=".5" />
+                                        <path d="M10,330L80,250l60,40 70-50 60,40 80-30 80,50 72-30v60H10z"
+                                            fill="#2E7D32" opacity=".6" />
+                                        <path
+                                            d="M10,420v-40q70,0 110-20 40-20 80-50 20-15 40,0 40,30 80,60 60,40 120,25 35-7 62,5v20H10z"
+                                            fill="#388E3C" />
+                                        <path
+                                            d="M10,420v-30q70,0 110-18 40-20 80-50 18-14 36-4 39,27 84,60 60,37 120,24 35-7 62,5v13H10z"
+                                            fill="#43A047" />
+                                        <path
+                                            d="M10,420v-22q70,0 110-18 40-20 80-48 15-12 30-4 40,24 90,56 60,34 120,23 35-7 62,5v8H10z"
+                                            fill="#4CAF50" />
+                                        <path d="M10,420h492v36q0,46-56,46H66q-56,0-56-46z" fill="#5D4037" />
+                                        <ellipse cx="180" cy="395" rx="50" ry="8" fill="#1B5E20" opacity=".35" />
+                                        <path d="M125,310l20,5 105-20 20-5z" fill="#37474F" />
+                                        <path
+                                            d="M120,295l10-10 25-5 45-12 45-13 30-5 10,5 3,10-6,10-22,7-105,23-25,5-10-2z"
+                                            fill="#E53935" />
+                                        <path d="M130,285l25-5 45-12 45-13 30-5 5,3-35,7-45,13-45,12-25,5z"
+                                            fill="#EF5350" />
+                                        <path d="M170,275l15-35 10-5 45-13 15,3 3,15-3,12-55,17-25,7z" fill="#C62828" />
+                                        <path d="M190,268l8-23 37-11 8,6-3,15-40,10z" fill="#29B6F6" />
+                                        <path d="M135,293l125-33v5L135,298z" fill="#FF8F00" opacity=".8" />
+                                        <path
+                                            d="M98,305Q70,300 55,310 65,295 80,298 60,280 50,290 65,270 82,290 75,265 90,285 88,275 95,290L98,300z"
+                                            fill="#FF6D00" />
+                                        <path
+                                            d="M98,304Q78,300 68,306 75,295 85,298 72,285 65,292 78,278 88,292 85,280 93,290L96,300z"
+                                            fill="#FF9100" />
+                                        <path
+                                            d="M98,303Q85,300 78,304 82,296 88,298 82,290 78,295 85,285 90,294 88,288 93,293L96,300z"
+                                            fill="#FFAB00" />
+                                        <g stroke="#FFF" stroke-linecap="round" fill="none">
+                                            <path d="M50,265l45-7" stroke-width="3" opacity=".7" />
+                                            <path d="M35,280l50-5" stroke-width="2.5" opacity=".6" />
+                                            <path d="M45,295l35-5" stroke-width="2" opacity=".5" />
+                                        </g>
+                                    </g>
+                                    <rect width="512" height="512" rx="56" stroke="#FF6D00" stroke-width="6"
+                                        fill="none" />
+                                    <rect x="4" y="4" width="504" height="504" rx="56" stroke="#FFB300" stroke-width="2"
+                                        fill="none" />
+                                    <circle cx="430" cy="410" r="28" fill="#FF6D00" />
+                                    <circle cx="430" cy="410" r="24" fill="#FFB300" />
+                                    <circle cx="430" cy="410" r="20" fill="#FFF" />
+                                    <g fill="#212121">
+                                        <rect x="420" y="400" width="10" height="10" />
+                                        <rect x="430" y="410" width="10" height="10" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="info">
+                                <h4>Turbo Trail Racer</h4><small>⭐ 4.9 &bull; 17 MB</small>
+                            </div><a
+                                href="https://github.com/LihkaGames/Turbo-Trail-Racer-Game/releases/download/v1.0.0/Turbo.Trail.Racer.apk"
+                                class="dl">⬇ Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                    <div>
+                        <h3 style="font-size:1rem;margin-bottom:12px;color:#888">📱 Top Apps</h3>
+                        <div class="lst">
+
+                            <!-- ==================== APP 1 ==================== -->
+                            <div class="lst-item"><span class="num top">1</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <?xml version="1.0" encoding="utf-8"?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108"
+                                        viewBox="0 0 108 108">
+
+                                        <!-- ═══════════════════════════════════
+         SAFE ZONE: 72x72dp centered
+         ═══════════════════════════════════ -->
+
+                                        <!-- Background fill -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+
+                                        <!-- Outer subtle ring -->
+                                        <path fill="none" stroke="#1E3A5F" stroke-width="2"
+                                            d="M54,54m-48,0a48,48 0,1 1,96 0a48,48 0,1 1,-96 0" />
+
+                                        <!-- ═══════════════════════════════════
+         GAUGE TRACK
+         ═══════════════════════════════════ -->
+                                        <path fill="none" stroke="#161D3A" stroke-width="7" stroke-linecap="round"
+                                            d="M16,64 A38,38 0,1,1 92,64" />
+
+                                        <!-- Segment Blue -->
+                                        <path fill="none" stroke="#0066FF" stroke-width="7" stroke-linecap="round"
+                                            d="M16,64 A38,38 0,0,1 28,30" />
+
+                                        <!-- Segment Cyan -->
+                                        <path fill="none" stroke="#00D4FF" stroke-width="7" stroke-linecap="round"
+                                            d="M28,30 A38,38 0,0,1 54,16" />
+
+                                        <!-- Segment Green -->
+                                        <path fill="none" stroke="#00FF88" stroke-width="7" stroke-linecap="round"
+                                            d="M54,16 A38,38 0,0,1 80,30" />
+
+                                        <!-- Segment Orange -->
+                                        <path fill="none" stroke="#FF6B35" stroke-width="7" stroke-linecap="round"
+                                            d="M80,30 A38,38 0,0,1 92,64" />
+
+                                        <!-- ═══════════════════════════════════
+         NEEDLE
+         ═══════════════════════════════════ -->
+                                        <!-- Needle shadow/glow -->
+                                        <path fill="none" stroke="#FF6B3566" stroke-width="4" stroke-linecap="round"
+                                            d="M54,54 L78,30" />
+
+                                        <!-- Needle -->
+                                        <path fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"
+                                            d="M54,54 L78,30" />
+
+                                        <!-- Needle tip -->
+                                        <path fill="#FF6B35" d="M78,30m-3.5,0a3.5,3.5 0,1 1,7 0a3.5,3.5 0,1 1,-7 0" />
+
+                                        <!-- ═══════════════════════════════════
+         CENTER HUB
+         ═══════════════════════════════════ -->
+                                        <path fill="#0A0E27" stroke="#00D4FF" stroke-width="2"
+                                            d="M54,54m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0" />
+
+                                        <path fill="#00D4FF" d="M54,54m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
+
+                                        <path fill="#FFFFFF" d="M54,54m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+
+                                        <!-- ═══════════════════════════════════
+         SIGNAL BARS
+         ═══════════════════════════════════ -->
+                                        <path fill="#00D4FF" fill-opacity="0.5" d="M22,76 L25,76 L25,82 L22,82 Z" />
+                                        <path fill="#00D4FF" fill-opacity="0.65" d="M27,73 L30,73 L30,82 L27,82 Z" />
+                                        <path fill="#00D4FF" fill-opacity="0.8" d="M32,69 L35,69 L35,82 L32,82 Z" />
+                                        <path fill="#00D4FF" d="M37,65 L40,65 L40,82 L37,82 Z" />
+
+                                        <!-- ═══════════════════════════════════
+         PING WAVE
+         ═══════════════════════════════════ -->
+                                        <path fill="none" stroke="#00FF88" stroke-width="2" stroke-linecap="round"
+                                            stroke-opacity="0.5" d="M72,76 Q76,70 80,76" />
+                                        <path fill="none" stroke="#00FF88" stroke-width="2" stroke-linecap="round"
+                                            stroke-opacity="0.8" d="M68,80 Q74,71 80,80" />
+                                        <path fill="#00FF88" d="M76,76m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>Signal Test Speed & Ping</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="https://github.com/LihkaGames/Signal-Test-Speed-Ping-App/releases/download/v1.0.0/Signal.Test.Speed.Ping.apk"
+                                    class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 2 ==================== -->
+                            <div class="lst-item"><span class="num top">2</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 2 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 2</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_2" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 3 ==================== -->
+                            <div class="lst-item"><span class="num top">3</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 3 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 3</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_3" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 4 ==================== -->
+                            <div class="lst-item"><span class="num">4</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 4 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 4</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_4" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 5 ==================== -->
+                            <div class="lst-item"><span class="num">5</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 5 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 5</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_5" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 6 ==================== -->
+                            <div class="lst-item"><span class="num">6</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 6 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 6</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_6" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 7 ==================== -->
+                            <div class="lst-item"><span class="num">7</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 7 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 7</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_7" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 8 ==================== -->
+                            <div class="lst-item"><span class="num">8</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 8 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 8</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_8" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 9 ==================== -->
+                            <div class="lst-item"><span class="num">9</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 9 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 9</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_9" class="dl">⬇ Download</a>
+                            </div>
+
+                            <!-- ==================== APP 10 ==================== -->
+                            <div class="lst-item"><span class="num">10</span>
+                                <div class="ico"
+                                    style="background:linear-gradient(135deg,#0F1A0F,#050505);padding:2px;display:flex;align-items:center;justify-content:center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                                        viewBox="0 0 108 108">
+                                        <!-- REPLACE SVG PATHS HERE FOR APP 10 -->
+                                        <path fill="#0A0E27" d="M0,0 H108 V108 H0 Z" />
+                                    </svg>
+                                </div>
+                                <div class="info">
+                                    <h4>App Name 10</h4>
+                                    <small>⭐ 4.9 &bull; 15 MB</small>
+                                </div>
+                                <a href="YOUR_DOWNLOAD_LINK_10" class="dl">⬇ Download</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <footer class="ftr">
+        <div class="wrap">
+            <div class="ftr-grid">
+                <div class="ftr-brand"><a href="index.html" class="hdr-logo" style="font-size:1.5rem"><i>🎮</i>Lihka
+                        Games</a>
+                    <p>Safe and free APK downloads for Android. Verified, updated daily.</p>
+                </div>
+                <div class="ftr-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="apps.html">Apps</a></li>
+                        <li><a href="games.html">Games</a></li>
+                        <li><a href="trending.html">Trending</a></li>
+                    </ul>
+                </div>
+                <div class="ftr-col">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ftr-bot">
+                <p>&copy; 2026 Lihka Games &bull; lihkagames@gmail.com</p>
+                <div><a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a> &nbsp;</div>
+            </div>
+        </div>
+    </footer>
+    <button class="btt">↑</button>
+    <script src="js/app.js"></script>
+    <!-- Add this before closing </body> tag -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+    <!-- Before closing </body> in public pages -->
+<script type="module" src="js/visitor-tracker.js"></script>
+<script type="module" src="js/download-tracker.js"></script>
+</body>
+
+</html>
