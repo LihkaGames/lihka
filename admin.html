@@ -5,361 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Panel - Lihka.in</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f0f23;
-      color: #fff;
-      min-height: 100vh;
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',sans-serif;background:#0f0f23;color:#fff;min-height:100vh}
 
     /* LOGIN */
-    .login-screen {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f0f23, #1a1a3e);
-    }
-    .login-box {
-      background: #1e1e3f;
-      padding: 40px;
-      border-radius: 20px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      border: 1px solid #333;
-    }
-    .login-box h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 1.8em;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .login-box input {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 15px;
-      background: #2a2a4a;
-      border: 1px solid #444;
-      border-radius: 10px;
-      color: white;
-      font-size: 1em;
-      outline: none;
-      transition: border 0.3s;
-    }
-    .login-box input:focus { border-color: #667eea; }
-    .login-btn {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 1.1em;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-    .login-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(102,126,234,0.4);
-    }
-    .login-error {
-      color: #ff6b6b;
-      text-align: center;
-      margin-top: 10px;
-      display: none;
-    }
+    .login-screen{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#0f0f23,#1a1a3e)}
+    .login-box{background:#1e1e3f;padding:40px;border-radius:20px;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid #333}
+    .login-box h2{text-align:center;margin-bottom:8px;font-size:1.8em;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .login-sub{color:#666;text-align:center;margin-bottom:25px;font-size:0.9em}
+    .login-box input{width:100%;padding:14px;margin-bottom:12px;background:#2a2a4a;border:1px solid #444;border-radius:10px;color:#fff;font-size:1em;outline:none;transition:border .3s}
+    .login-box input:focus{border-color:#667eea}
+    .login-btn{width:100%;padding:14px;background:linear-gradient(135deg,#667eea,#764ba2);border:none;border-radius:10px;color:#fff;font-size:1em;cursor:pointer;font-weight:bold;transition:all .3s}
+    .login-btn:hover{transform:translateY(-2px)}
+    .login-error{color:#ff6b6b;text-align:center;margin-top:10px;display:none;font-size:.9em}
 
     /* DASHBOARD */
-    .dashboard { display: none; }
+    .dashboard{display:none}
+    .header{background:#1e1e3f;padding:15px 25px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px}
+    .header h1{font-size:1.3em;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .header-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .btn{padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-size:.85em;font-weight:600;transition:all .3s}
+    .btn-primary{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+    .btn-danger{background:#ff4757;color:#fff}
+    .btn-green{background:#2ed573;color:#000}
+    .btn:hover{transform:translateY(-1px);opacity:.9}
+    .main-content{padding:20px}
 
-    .header {
-      background: #1e1e3f;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #333;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .header h1 {
-      font-size: 1.3em;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .header-right {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 8px 16px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.85em;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    .btn-primary { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
-    .btn-danger  { background: #ff4757; color: white; }
-    .btn:hover   { transform: translateY(-1px); }
-
-    .main-content { padding: 20px; }
+    /* ALERT */
+    .alert{padding:15px 20px;border-radius:10px;margin-bottom:20px;font-size:.9em;line-height:1.7}
+    .alert a{color:#667eea}
+    .alert-error{background:rgba(255,71,87,.15);border:1px solid #ff4757;color:#ff6b6b}
+    .alert-success{background:rgba(46,213,115,.15);border:1px solid #2ed573;color:#2ed573}
+    .alert-info{background:rgba(102,126,234,.15);border:1px solid #667eea;color:#a0aeee}
 
     /* STATS */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-    .stat-card {
-      background: #1e1e3f;
-      padding: 20px 15px;
-      border-radius: 12px;
-      border: 1px solid #333;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .stat-card:hover { transform: translateY(-4px); }
-    .stat-card .icon { font-size: 2em; margin-bottom: 8px; }
-    .stat-card .label {
-      color: #aaa;
-      font-size: 0.75em;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .stat-card .value {
-      font-size: 1.8em;
-      font-weight: bold;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin-bottom:25px}
+    .stat-card{background:#1e1e3f;padding:20px 15px;border-radius:12px;border:1px solid #333;text-align:center;transition:transform .3s}
+    .stat-card:hover{transform:translateY(-4px);border-color:#667eea}
+    .stat-icon{font-size:1.8em;margin-bottom:8px}
+    .stat-label{color:#888;font-size:.72em;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+    .stat-value{font-size:1.7em;font-weight:bold;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
     /* TABS */
-    .tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      padding: 9px 18px;
-      background: #1e1e3f;
-      border: 1px solid #333;
-      border-radius: 8px;
-      color: #aaa;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-size: 0.85em;
-    }
-    .tab-btn.active {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      border-color: transparent;
-    }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .tabs{display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap}
+    .tab-btn{padding:9px 16px;background:#1e1e3f;border:1px solid #333;border-radius:8px;color:#888;cursor:pointer;transition:all .3s;font-size:.85em}
+    .tab-btn.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent}
+    .tab-content{display:none}
+    .tab-content.active{display:block}
 
-    /* TABLE */
-    .table-box {
-      background: #1e1e3f;
-      border-radius: 12px;
-      border: 1px solid #333;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-    .table-header {
-      padding: 15px 20px;
-      border-bottom: 1px solid #333;
-      font-weight: 600;
-      font-size: 1em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; min-width: 700px; }
-    th {
-      background: #252545;
-      padding: 10px 12px;
-      text-align: left;
-      color: #aaa;
-      font-size: 0.8em;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-    td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #2a2a4a;
-      font-size: 0.85em;
-      white-space: nowrap;
-    }
-    tr:hover td { background: #252545; }
-    tr:last-child td { border-bottom: none; }
+    /* TABLE BOX */
+    .table-box{background:#1e1e3f;border-radius:12px;border:1px solid #333;overflow:hidden;margin-bottom:20px}
+    .table-header{padding:15px 20px;border-bottom:1px solid #333;font-weight:600;font-size:.95em;display:flex;justify-content:space-between;align-items:center}
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;min-width:750px}
+    th{background:#252545;padding:10px 12px;text-align:left;color:#888;font-size:.75em;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+    td{padding:10px 12px;border-bottom:1px solid #1a1a2e;font-size:.82em;white-space:nowrap}
+    tr:hover td{background:#252545}
+    tr:last-child td{border-bottom:none}
 
     /* BADGES */
-    .badge {
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-size: 0.78em;
-      font-weight: 600;
-    }
-    .badge-download { background: rgba(102,126,234,0.2); color: #667eea; }
-    .badge-visit    { background: rgba(46,213,115,0.2);  color: #2ed573; }
-    .badge-mobile   { background: rgba(255,165,2,0.2);   color: #ffa502; }
-    .badge-tablet   { background: rgba(255,99,72,0.2);   color: #ff6348; }
-    .badge-desktop  { background: rgba(116,185,255,0.2); color: #74b9ff; }
+    .badge{padding:3px 9px;border-radius:20px;font-size:.78em;font-weight:600}
+    .badge-download{background:rgba(102,126,234,.2);color:#667eea}
+    .badge-visit{background:rgba(46,213,115,.2);color:#2ed573}
+    .badge-mobile{background:rgba(255,165,2,.2);color:#ffa502}
+    .badge-tablet{background:rgba(255,99,72,.2);color:#ff6348}
+    .badge-desktop{background:rgba(116,185,255,.2);color:#74b9ff}
 
-    /* DOWNLOAD BARS */
-    .dl-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 20px;
-      border-bottom: 1px solid #2a2a4a;
-    }
-    .dl-item:last-child { border-bottom: none; }
-    .dl-rank {
-      width: 28px;
-      height: 28px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8em;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-    .dl-name { flex: 1; font-weight: 500; }
-    .dl-bar-wrap {
-      flex: 2;
-      background: #2a2a4a;
-      border-radius: 10px;
-      height: 8px;
-      overflow: hidden;
-    }
-    .dl-bar {
-      height: 100%;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 10px;
-      transition: width 1s ease;
-      width: 0%;
-    }
-    .dl-count {
-      color: #667eea;
-      font-weight: bold;
-      min-width: 100px;
-      text-align: right;
-      font-size: 0.9em;
-    }
-
-    /* COUNTRY / CITY LIST */
-    .loc-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 20px;
-      border-bottom: 1px solid #2a2a4a;
-    }
-    .loc-item:last-child { border-bottom: none; }
-    .loc-icon { font-size: 1.4em; }
-    .loc-name { flex: 1; }
-    .loc-bar-wrap {
-      flex: 2;
-      background: #2a2a4a;
-      border-radius: 10px;
-      height: 6px;
-      overflow: hidden;
-    }
-    .loc-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #2ed573, #1e90ff);
-      border-radius: 10px;
-      transition: width 1s ease;
-      width: 0%;
-    }
-    .loc-count { color: #2ed573; font-weight: bold; min-width: 90px; text-align: right; font-size: 0.9em; }
+    /* BARS */
+    .bar-item{display:flex;align-items:center;gap:12px;padding:13px 20px;border-bottom:1px solid #1a1a2e}
+    .bar-item:last-child{border-bottom:none}
+    .bar-rank{width:26px;height:26px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75em;font-weight:bold;flex-shrink:0}
+    .bar-name{flex:1;font-size:.9em}
+    .bar-track{flex:2;background:#2a2a4a;border-radius:10px;height:7px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:10px;transition:width 1.2s ease;width:0}
+    .bar-blue{background:linear-gradient(90deg,#667eea,#764ba2)}
+    .bar-green{background:linear-gradient(90deg,#2ed573,#1e90ff)}
+    .bar-count{font-weight:bold;min-width:100px;text-align:right;font-size:.85em}
+    .count-blue{color:#667eea}
+    .count-green{color:#2ed573}
 
     /* SEARCH */
-    .search-input {
-      padding: 8px 14px;
-      background: #2a2a4a;
-      border: 1px solid #444;
-      border-radius: 8px;
-      color: white;
-      font-size: 0.85em;
-      outline: none;
-      width: 200px;
-    }
-    .search-input:focus { border-color: #667eea; }
+    .search-input{padding:8px 14px;background:#2a2a4a;border:1px solid #444;border-radius:8px;color:#fff;font-size:.85em;outline:none;width:180px}
+    .search-input:focus{border-color:#667eea}
 
     /* LOADING */
-    .loading-box {
-      text-align: center;
-      padding: 60px 20px;
-      color: #667eea;
-    }
-    .spinner {
-      width: 45px;
-      height: 45px;
-      border: 4px solid #333;
-      border-top: 4px solid #667eea;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 15px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-box{text-align:center;padding:50px 20px}
+    .spinner{width:42px;height:42px;border:4px solid #333;border-top:4px solid #667eea;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 15px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading-text{color:#667eea;font-size:.95em}
+    .loading-sub{color:#555;font-size:.8em;margin-top:5px}
+    .no-data{text-align:center;padding:40px;color:#555}
 
-    .no-data {
-      text-align: center;
-      padding: 40px;
-      color: #555;
-      font-size: 0.95em;
-    }
+    /* STATUS */
+    .status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+    .dot-green{background:#2ed573;box-shadow:0 0 6px #2ed573}
+    .dot-red{background:#ff4757;box-shadow:0 0 6px #ff4757}
+    .dot-yellow{background:#ffa502;box-shadow:0 0 6px #ffa502;animation:pulse 1s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .last-updated{color:#666;font-size:.8em}
 
-    .status-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-right: 6px;
-    }
-    .dot-green  { background: #2ed573; box-shadow: 0 0 6px #2ed573; }
-    .dot-red    { background: #ff4757; box-shadow: 0 0 6px #ff4757; }
-    .dot-yellow { background: #ffa502; box-shadow: 0 0 6px #ffa502; }
-
-    .last-updated { color: #666; font-size: 0.8em; }
-
-    .error-box {
-      background: rgba(255,71,87,0.1);
-      border: 1px solid #ff4757;
-      border-radius: 10px;
-      padding: 20px;
-      color: #ff6b6b;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      .header { flex-direction: column; align-items: flex-start; }
-      .search-input { width: 140px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    @media(max-width:600px){
+      .header{flex-direction:column;align-items:flex-start}
+      .search-input{width:130px}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .bar-track{display:none}
     }
   </style>
 </head>
@@ -368,10 +117,10 @@
 <!-- ===== LOGIN ===== -->
 <div class="login-screen" id="loginScreen">
   <div class="login-box">
-    <h2>🔐 Admin Login</h2>
-    <p style="color:#aaa;text-align:center;margin-bottom:25px;font-size:0.9em;">Lihka.in Dashboard</p>
+    <h2>🔐 Admin Panel</h2>
+    <p class="login-sub">Lihka.in Analytics Dashboard</p>
     <input type="text"     id="username" placeholder="👤 Username" autocomplete="off"/>
-    <input type="password" id="password" placeholder="🔒 Password" />
+    <input type="password" id="password" placeholder="🔒 Password"/>
     <button class="login-btn" onclick="doLogin()">Login →</button>
     <p class="login-error" id="loginError">❌ Wrong credentials!</p>
   </div>
@@ -384,11 +133,11 @@
     <h1>📊 Lihka.in Admin Panel</h1>
     <div class="header-right">
       <span class="last-updated" id="statusText">
-        <span class="status-dot dot-yellow"></span>Loading...
+        <span class="status-dot dot-yellow"></span>Connecting...
       </span>
       <input type="text" class="search-input" id="searchInput"
-             placeholder="🔍 Search..."
-             oninput="filterTable()" />
+             placeholder="🔍 Search..." oninput="filterTable()"/>
+      <button class="btn btn-green"   onclick="testURL()">🔗 Test URL</button>
       <button class="btn btn-primary" onclick="loadData()">🔄 Refresh</button>
       <button class="btn btn-danger"  onclick="doLogout()">🚪 Logout</button>
     </div>
@@ -396,61 +145,64 @@
 
   <div class="main-content">
 
-    <!-- STAT CARDS -->
+    <div id="alertArea"></div>
+
+    <!-- STATS -->
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="icon">👁️</div>
-        <div class="label">Total Visits</div>
-        <div class="value" id="statVisits">-</div>
+        <div class="stat-icon">👁️</div>
+        <div class="stat-label">Total Visits</div>
+        <div class="stat-value" id="sVisits">-</div>
       </div>
       <div class="stat-card">
-        <div class="icon">📥</div>
-        <div class="label">Downloads</div>
-        <div class="value" id="statDownloads">-</div>
+        <div class="stat-icon">📥</div>
+        <div class="stat-label">Downloads</div>
+        <div class="stat-value" id="sDownloads">-</div>
       </div>
       <div class="stat-card">
-        <div class="icon">📅</div>
-        <div class="label">Today</div>
-        <div class="value" id="statToday">-</div>
+        <div class="stat-icon">📅</div>
+        <div class="stat-label">Today</div>
+        <div class="stat-value" id="sToday">-</div>
       </div>
       <div class="stat-card">
-        <div class="icon">🌍</div>
-        <div class="label">Countries</div>
-        <div class="value" id="statCountries">-</div>
+        <div class="stat-icon">🌍</div>
+        <div class="stat-label">Countries</div>
+        <div class="stat-value" id="sCountries">-</div>
       </div>
       <div class="stat-card">
-        <div class="icon">📱</div>
-        <div class="label">Mobile</div>
-        <div class="value" id="statMobile">-</div>
+        <div class="stat-icon">📱</div>
+        <div class="stat-label">Mobile</div>
+        <div class="stat-value" id="sMobile">-</div>
       </div>
       <div class="stat-card">
-        <div class="icon">🖥️</div>
-        <div class="label">Desktop</div>
-        <div class="value" id="statDesktop">-</div>
+        <div class="stat-icon">🖥️</div>
+        <div class="stat-label">Desktop</div>
+        <div class="stat-value" id="sDesktop">-</div>
       </div>
     </div>
 
     <!-- TABS -->
     <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('visitors', this)">🌐 Visitors</button>
+      <button class="tab-btn active" onclick="switchTab('visitors',  this)">🌐 Visitors</button>
       <button class="tab-btn"        onclick="switchTab('downloads', this)">📥 Downloads</button>
       <button class="tab-btn"        onclick="switchTab('countries', this)">🌍 Countries</button>
       <button class="tab-btn"        onclick="switchTab('states',    this)">🗺️ States</button>
       <button class="tab-btn"        onclick="switchTab('cities',    this)">🏙️ Cities</button>
     </div>
 
-    <!-- TAB: VISITORS -->
+    <!-- VISITORS TAB -->
     <div class="tab-content active" id="tab-visitors">
       <div class="table-box">
         <div class="table-header">
           <span>🌐 All Visitors</span>
-          <span id="visitorCount" style="color:#667eea;font-size:0.85em;">0 records</span>
+          <span id="visitorCount" style="color:#667eea;font-size:.82em">0 records</span>
         </div>
         <div class="loading-box" id="tableLoading">
           <div class="spinner"></div>
-          <p>Fetching data from Google Sheets...</p>
+          <p class="loading-text">Connecting to Google Sheets...</p>
+          <p class="loading-sub">Please wait 5–10 seconds</p>
         </div>
-        <div class="table-wrap" id="tableWrap" style="display:none;">
+        <div class="table-wrap" id="tableWrap" style="display:none">
           <table>
             <thead>
               <tr>
@@ -466,287 +218,327 @@
                 <th>IP Address</th>
               </tr>
             </thead>
-            <tbody id="visitorsTableBody"></tbody>
+            <tbody id="tBody"></tbody>
           </table>
         </div>
-        <div class="error-box" id="tableError" style="display:none;margin:20px;"></div>
       </div>
     </div>
 
-    <!-- TAB: DOWNLOADS -->
+    <!-- DOWNLOADS TAB -->
     <div class="tab-content" id="tab-downloads">
       <div class="table-box">
         <div class="table-header">
-          <span>📥 App &amp; Game Downloads</span>
-          <span id="dlTotal" style="color:#667eea;font-size:0.85em;"></span>
+          <span>📥 Downloads by App / Game</span>
+          <span id="dlTotal" style="color:#667eea;font-size:.82em"></span>
         </div>
-        <div id="downloadsList"><div class="no-data">Loading...</div></div>
+        <div id="dlList"><div class="no-data">Loading...</div></div>
       </div>
     </div>
 
-    <!-- TAB: COUNTRIES -->
+    <!-- COUNTRIES TAB -->
     <div class="tab-content" id="tab-countries">
       <div class="table-box">
         <div class="table-header">🌍 Visitors by Country</div>
-        <div id="countriesList"><div class="no-data">Loading...</div></div>
+        <div id="countryList"><div class="no-data">Loading...</div></div>
       </div>
     </div>
 
-    <!-- TAB: STATES -->
+    <!-- STATES TAB -->
     <div class="tab-content" id="tab-states">
       <div class="table-box">
-        <div class="table-header">🗺️ Visitors by State</div>
-        <div id="statesList"><div class="no-data">Loading...</div></div>
+        <div class="table-header">🗺️ Visitors by State / Region</div>
+        <div id="stateList"><div class="no-data">Loading...</div></div>
       </div>
     </div>
 
-    <!-- TAB: CITIES -->
+    <!-- CITIES TAB -->
     <div class="tab-content" id="tab-cities">
       <div class="table-box">
         <div class="table-header">🏙️ Visitors by City</div>
-        <div id="citiesList"><div class="no-data">Loading...</div></div>
+        <div id="cityList"><div class="no-data">Loading...</div></div>
       </div>
     </div>
 
-  </div>
-</div>
+  </div><!-- /main-content -->
+</div><!-- /dashboard -->
 
 <script>
-// ============================================================
-// CONFIG — Change password here
-// ============================================================
-const SHEET_URL    = 'https://script.google.com/macros/s/AKfycbz7Kmre78X3sZxoaQ2C3LrILRfsVQrg6pdK1DWeAjamonmx4MeVxI22fEJYiwesubp2Lw/exec';
-const ADMIN_USER   = 'lihka';
-const ADMIN_PASS   = 'lihka@2024';
+// =============================================
+// CONFIG
+// =============================================
+const SHEET_URL  = 'https://script.google.com/macros/s/AKfycbzXdAXXbOH73Kk6CGxPLRyc4ikWkYEFQscP2_Vfn01f1C6OFhJQEKv1KtXUyrG9w0EV_w/exec';
+const ADMIN_USER = 'lihka';
+const ADMIN_PASS = 'lihka@2024';
 
-let allRows = [];
+let allRows    = [];
+let retries    = 0;
+const MAX_TRY  = 3;
 
-// ============================================================
-// LOGIN
-// ============================================================
+// =============================================
+// LOGIN / LOGOUT
+// =============================================
 function doLogin() {
   const u = document.getElementById('username').value.trim();
   const p = document.getElementById('password').value.trim();
   if (u === ADMIN_USER && p === ADMIN_PASS) {
-    sessionStorage.setItem('lihkaAdmin', 'yes');
+    sessionStorage.setItem('lihkaAdmin', '1');
     showDashboard();
   } else {
-    const err = document.getElementById('loginError');
-    err.style.display = 'block';
-    setTimeout(() => err.style.display = 'none', 3000);
+    const el = document.getElementById('loginError');
+    el.style.display = 'block';
+    setTimeout(() => el.style.display = 'none', 3000);
   }
 }
-
 function doLogout() {
   sessionStorage.removeItem('lihkaAdmin');
   location.reload();
 }
-
 function showDashboard() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('dashboard').style.display   = 'block';
   loadData();
 }
-
 document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+if (sessionStorage.getItem('lihkaAdmin') === '1') showDashboard();
 
-if (sessionStorage.getItem('lihkaAdmin') === 'yes') showDashboard();
-
-// ============================================================
-// LOAD DATA — Using JSONP to bypass CORS
-// ============================================================
-function loadData() {
-  setStatus('yellow', 'Fetching...');
-  showTableLoading(true);
-
-  // Use JSONP approach
-  const cbName = 'lihkaCallback_' + Date.now();
-
-  window[cbName] = function(data) {
-    // Cleanup script tag
-    const el = document.getElementById('jsonpScript');
-    if (el) el.remove();
-    delete window[cbName];
-
-    if (data && data.success && Array.isArray(data.rows)) {
-      allRows = data.rows;
-      processData(allRows);
-      setStatus('green', 'Updated ' + new Date().toLocaleTimeString());
+// =============================================
+// TEST URL
+// =============================================
+async function testURL() {
+  showAlert('info', '🔗 Testing your Google Apps Script URL...');
+  const testUrl = SHEET_URL + '?callback=testFn&t=' + Date.now();
+  try {
+    const res  = await fetch(testUrl);
+    const text = await res.text();
+    if (text.startsWith('testFn(')) {
+      showAlert('success', '✅ URL is working perfectly! Now click 🔄 Refresh to load data.');
+      setStatus('green', 'URL OK');
     } else {
-      showError('No data returned. Make sure your Google Sheet has data.');
-      setStatus('red', 'Error');
+      showAlert('error', `⚠️ URL responded but format is wrong.<br>Response: <code>${text.substring(0,120)}</code><br>Redeploy your Apps Script.`);
     }
-    showTableLoading(false);
-  };
-
-  // Inject JSONP script
-  const script = document.createElement('script');
-  script.id  = 'jsonpScript';
-  script.src = SHEET_URL + '?callback=' + cbName + '&t=' + Date.now();
-
-  script.onerror = function() {
-    delete window[cbName];
-    showError('❌ Could not connect to Google Sheets.<br>Make sure your Apps Script is deployed as "Anyone" access.');
-    setStatus('red', 'Connection Error');
-    showTableLoading(false);
-  };
-
-  document.head.appendChild(script);
+  } catch (err) {
+    showAlert('error', `
+      ❌ <strong>URL not reachable.</strong> Error: ${err.message}<br><br>
+      <strong>Fix steps:</strong><br>
+      1. Go to <a href="https://script.google.com" target="_blank">script.google.com</a><br>
+      2. Deploy → Manage Deployments → Delete old → New Deployment<br>
+      3. Type: <strong>Web App</strong><br>
+      4. Execute as: <strong>Me</strong><br>
+      5. Who has access: <strong>Anyone</strong> ← very important<br>
+      6. Click Deploy → Authorize → Copy new URL<br>
+      7. Update URL in admin.html and analytics.js
+    `);
+    setStatus('red', 'URL Failed');
+  }
 }
 
-// ============================================================
-// PROCESS & DISPLAY DATA
-// ============================================================
-function processData(rows) {
-  if (!rows || !rows.length) {
-    showError('📭 No data yet. Visitors will appear here after your first page views.');
-    updateStats([], [], []);
+// =============================================
+// LOAD DATA (JSONP)
+// =============================================
+function loadData() {
+  retries = 0;
+  clearAlert();
+  setStatus('yellow', 'Loading...');
+  showLoading(true);
+  doJSONP();
+}
+
+function doJSONP() {
+  // Remove old script
+  const old = document.getElementById('_jsonp');
+  if (old) old.remove();
+
+  const cb   = 'lihkaCB_' + Date.now();
+  const tout = setTimeout(() => {
+    if (!window[cb]) return;
+    delete window[cb];
+    handleRetry('Request timed out after 15s');
+  }, 15000);
+
+  window[cb] = function(data) {
+    clearTimeout(tout);
+    const s = document.getElementById('_jsonp');
+    if (s) s.remove();
+    delete window[cb];
+    handleResponse(data);
+  };
+
+  const sc  = document.createElement('script');
+  sc.id     = '_jsonp';
+  sc.src    = SHEET_URL + '?callback=' + cb + '&t=' + Date.now();
+  sc.onerror = function() {
+    clearTimeout(tout);
+    if (window[cb]) delete window[cb];
+    handleRetry('Script load error');
+  };
+  document.head.appendChild(sc);
+}
+
+function handleRetry(reason) {
+  retries++;
+  if (retries < MAX_TRY) {
+    showAlert('info', `⏳ ${reason}. Retrying (${retries}/${MAX_TRY})...`);
+    setTimeout(doJSONP, 2500);
+  } else {
+    showLoading(false);
+    setStatus('red', 'Failed');
+    showAlert('error', `
+      ❌ <strong>Cannot connect after ${MAX_TRY} tries.</strong><br>
+      Reason: ${reason}<br><br>
+      <strong>Please check:</strong><br>
+      • Apps Script deployed as <strong>Anyone</strong> access<br>
+      • You authorized the script<br>
+      • Copy the correct deployment URL (not the editor URL)<br><br>
+      Click <strong>🔗 Test URL</strong> button for detailed diagnosis.
+    `);
+  }
+}
+
+function handleResponse(data) {
+  showLoading(false);
+  if (data && data.success === true && Array.isArray(data.rows)) {
+    allRows = data.rows;
+    buildDashboard(allRows);
+    setStatus('green', '✅ ' + new Date().toLocaleTimeString());
+    if (allRows.length === 0) {
+      showAlert('info', `
+        📭 <strong>Google Sheet is empty.</strong><br>
+        Visit your website pages to generate tracking data.<br>
+        Make sure <code>analytics.js</code> is added to all your HTML pages.
+      `);
+    }
+  } else if (data && data.success === false) {
+    showLoading(false);
+    setStatus('red', 'Sheet Error');
+    showAlert('error', '❌ Sheet error: ' + (data.error || 'Unknown'));
+  } else {
+    showLoading(false);
+    setStatus('red', 'Bad Response');
+    showAlert('error', '❌ Unexpected response from Google Sheets. Try redeploying.');
+  }
+}
+
+// =============================================
+// BUILD DASHBOARD
+// =============================================
+function buildDashboard(rows) {
+  if (!rows.length) {
+    setV('sVisits','0'); setV('sDownloads','0'); setV('sToday','0');
+    setV('sCountries','0'); setV('sMobile','0'); setV('sDesktop','0');
+    renderTable([]);
+    renderBars('dlList',      {}, 'dlTotal', 'dl',  '📦', 'blue',  'No downloads yet.');
+    renderBars('countryList', {}, null,      'loc', '🌍', 'green', 'No data yet.');
+    renderBars('stateList',   {}, null,      'loc', '🗺️', 'green', 'No data yet.');
+    renderBars('cityList',    {}, null,      'loc', '🏙️', 'green', 'No data yet.');
     return;
   }
-
-  // Col index: 0=time, 1=type, 2=item, 3=country, 4=state, 5=city,
-  //            6=ip, 7=device, 8=isp, 9=referrer, 10=page, 11=ua
 
   const today = new Date().toDateString();
-  let visits = 0, downloads = 0, todayCount = 0, mobile = 0, desktop = 0;
-  const countries = {}, states = {}, cities = {}, dlMap = {};
+  let visits=0, dls=0, todayC=0, mobile=0, desktop=0;
+  const ctry={}, state={}, city={}, dlMap={};
 
-  rows.forEach(row => {
-    const type    = String(row[1] || '').toLowerCase();
-    const item    = String(row[2] || '-');
-    const country = String(row[3] || 'Unknown');
-    const state   = String(row[4] || 'Unknown');
-    const city    = String(row[5] || 'Unknown');
-    const device  = String(row[7] || 'Unknown');
-    const rowDate = new Date(row[0]).toDateString();
+  rows.forEach(r => {
+    const type   = String(r[1]||'').toLowerCase().trim();
+    const item   = String(r[2]||'-');
+    const co     = String(r[3]||'Unknown');
+    const st     = String(r[4]||'Unknown');
+    const ci     = String(r[5]||'Unknown');
+    const dev    = String(r[7]||'Unknown');
+    const rDate  = new Date(r[0]).toDateString();
 
-    if (type === 'visit')    visits++;
-    if (type === 'download') { downloads++; dlMap[item] = (dlMap[item] || 0) + 1; }
-    if (rowDate === today)   todayCount++;
-    if (device === 'Mobile') mobile++;
-    if (device === 'Desktop') desktop++;
+    if (type==='visit')    visits++;
+    if (type==='download'){ dls++; dlMap[item]=(dlMap[item]||0)+1; }
+    if (rDate===today)     todayC++;
+    if (dev==='Mobile')    mobile++;
+    if (dev==='Desktop')   desktop++;
 
-    countries[country] = (countries[country] || 0) + 1;
-    states[state]      = (states[state]      || 0) + 1;
-    cities[city]       = (cities[city]       || 0) + 1;
+    if(co && co!=='Unknown') ctry[co]=(ctry[co]||0)+1;
+    if(st && st!=='Unknown') state[st]=(state[st]||0)+1;
+    if(ci && ci!=='Unknown') city[ci]=(city[ci]||0)+1;
   });
 
-  // Update stat cards
-  setEl('statVisits',    visits.toLocaleString());
-  setEl('statDownloads', downloads.toLocaleString());
-  setEl('statToday',     todayCount.toLocaleString());
-  setEl('statCountries', Object.keys(countries).length);
-  setEl('statMobile',    mobile.toLocaleString());
-  setEl('statDesktop',   desktop.toLocaleString());
+  setV('sVisits',    visits.toLocaleString());
+  setV('sDownloads', dls.toLocaleString());
+  setV('sToday',     todayC.toLocaleString());
+  setV('sCountries', Object.keys(ctry).length);
+  setV('sMobile',    mobile.toLocaleString());
+  setV('sDesktop',   desktop.toLocaleString());
 
-  // Update tables
-  renderVisitorsTable(rows);
-  renderDownloads(dlMap, downloads);
-  renderLocation('countriesList', countries, '🌍');
-  renderLocation('statesList',    states,    '🗺️');
-  renderLocation('citiesList',    cities,    '🏙️');
+  renderTable(rows);
+  renderBars('dlList',      dlMap, 'dlTotal', 'dl',  '📦', 'blue',  'No downloads yet.');
+  renderBars('countryList', ctry,  null,      'loc', '🌍', 'green', 'No country data.');
+  renderBars('stateList',   state, null,      'loc', '🗺️', 'green', 'No state data.');
+  renderBars('cityList',    city,  null,      'loc', '🏙️', 'green', 'No city data.');
 }
 
-// ============================================================
-// RENDER VISITORS TABLE
-// ============================================================
-function renderVisitorsTable(rows) {
-  const reversed = [...rows].reverse();
-  setEl('visitorCount', rows.length + ' records');
-
-  if (!rows.length) {
-    document.getElementById('tableWrap').style.display = 'none';
-    showError('No visitors yet.');
-    return;
-  }
-
+// =============================================
+// RENDER TABLE
+// =============================================
+function renderTable(rows) {
+  const rev = [...rows].reverse();
+  setV('visitorCount', rows.length + ' records');
   document.getElementById('tableWrap').style.display = 'block';
-  document.getElementById('tableError').style.display = 'none';
 
-  const tbody = document.getElementById('visitorsTableBody');
-  tbody.innerHTML = reversed.map((row, i) => {
-    const type   = String(row[1] || 'visit').toLowerCase();
-    const device = String(row[7] || '').toLowerCase();
-    return `
-      <tr>
-        <td style="color:#555">${i + 1}</td>
-        <td>${fmtDate(row[0])}</td>
-        <td><span class="badge badge-${type}">${type}</span></td>
-        <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis" title="${row[10]||''}">${row[2] || '-'}</td>
-        <td>${row[3] || '-'}</td>
-        <td>${row[4] || '-'}</td>
-        <td>${row[5] || '-'}</td>
-        <td><span class="badge badge-${device}">${row[7] || '-'}</span></td>
-        <td style="color:#666;font-size:0.8em">${row[8] || '-'}</td>
-        <td style="color:#666;font-size:0.8em">${row[6] || '-'}</td>
-      </tr>`;
-  }).join('');
+  document.getElementById('tBody').innerHTML = rev.length
+    ? rev.map((r, i) => {
+        const type = String(r[1]||'visit').toLowerCase().trim();
+        const dev  = String(r[7]||'').toLowerCase().trim();
+        return `<tr>
+          <td style="color:#555">${i+1}</td>
+          <td>${fmtDate(r[0])}</td>
+          <td><span class="badge badge-${type}">${type}</span></td>
+          <td style="max-width:160px;overflow:hidden;text-overflow:ellipsis" title="${esc(r[10]||'')}">${esc(r[2]||'-')}</td>
+          <td>${esc(r[3]||'-')}</td>
+          <td>${esc(r[4]||'-')}</td>
+          <td>${esc(r[5]||'-')}</td>
+          <td><span class="badge badge-${dev}">${esc(r[7]||'-')}</span></td>
+          <td style="color:#666;font-size:.8em;max-width:130px;overflow:hidden;text-overflow:ellipsis">${esc(r[8]||'-')}</td>
+          <td style="color:#555;font-size:.8em">${esc(r[6]||'-')}</td>
+        </tr>`;
+      }).join('')
+    : `<tr><td colspan="10" class="no-data">No visitors yet. Browse your site to generate data.</td></tr>`;
 }
 
-// ============================================================
-// RENDER DOWNLOADS
-// ============================================================
-function renderDownloads(dlMap, total) {
-  const sorted = Object.entries(dlMap).sort((a, b) => b[1] - a[1]);
+// =============================================
+// RENDER BARS (downloads / countries / cities)
+// =============================================
+function renderBars(elId, map, totalElId, mode, icon, color, emptyMsg) {
+  const sorted = Object.entries(map).sort((a,b) => b[1]-a[1]);
   const max    = sorted.length ? sorted[0][1] : 1;
-  setEl('dlTotal', total + ' total downloads');
+  const total  = sorted.reduce((s,[,v]) => s+v, 0);
+
+  if (totalElId) setV(totalElId, total + (mode==='dl' ? ' total downloads' : ' total'));
 
   if (!sorted.length) {
-    setEl('downloadsList', '<div class="no-data">📭 No downloads tracked yet.</div>');
+    setV(elId, `<div class="no-data">${emptyMsg}</div>`);
     return;
   }
 
-  document.getElementById('downloadsList').innerHTML = sorted.map(([name, count], i) => `
-    <div class="dl-item">
-      <div class="dl-rank">${i + 1}</div>
-      <div class="dl-name">${name}</div>
-      <div class="dl-bar-wrap">
-        <div class="dl-bar" style="width:${Math.round(count / max * 100)}%"></div>
+  document.getElementById(elId).innerHTML = sorted.map(([name, count], i) => `
+    <div class="bar-item">
+      ${mode==='dl'
+        ? `<div class="bar-rank">${i+1}</div>`
+        : `<div style="font-size:1.3em">${icon}</div>`}
+      <div class="bar-name">${esc(name)}</div>
+      <div class="bar-track">
+        <div class="bar-fill bar-${color}" style="width:${Math.round(count/max*100)}%"></div>
       </div>
-      <div class="dl-count">${count} downloads</div>
+      <div class="bar-count count-${color}">${count.toLocaleString()} ${mode==='dl'?'downloads':'visitors'}</div>
     </div>
   `).join('');
 }
 
-// ============================================================
-// RENDER LOCATION (country / state / city)
-// ============================================================
-function renderLocation(elId, map, icon) {
-  const sorted = Object.entries(map).sort((a, b) => b[1] - a[1]);
-  const max    = sorted.length ? sorted[0][1] : 1;
-
-  if (!sorted.length) {
-    setEl(elId, '<div class="no-data">No data yet.</div>');
-    return;
-  }
-
-  document.getElementById(elId).innerHTML = sorted.map(([name, count]) => `
-    <div class="loc-item">
-      <div class="loc-icon">${icon}</div>
-      <div class="loc-name">${name}</div>
-      <div class="loc-bar-wrap">
-        <div class="loc-bar" style="width:${Math.round(count / max * 100)}%"></div>
-      </div>
-      <div class="loc-count">${count} visitors</div>
-    </div>
-  `).join('');
-}
-
-// ============================================================
+// =============================================
 // SEARCH / FILTER
-// ============================================================
+// =============================================
 function filterTable() {
   const q = document.getElementById('searchInput').value.toLowerCase();
-  if (!q) { renderVisitorsTable(allRows); return; }
-  const filtered = allRows.filter(row =>
-    row.some(cell => String(cell).toLowerCase().includes(q))
-  );
-  renderVisitorsTable(filtered);
+  renderTable(q ? allRows.filter(r => r.some(c => String(c).toLowerCase().includes(q))) : allRows);
 }
 
-// ============================================================
+// =============================================
 // TABS
-// ============================================================
+// =============================================
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -754,45 +546,44 @@ function switchTab(name, btn) {
   btn.classList.add('active');
 }
 
-// ============================================================
+// =============================================
 // HELPERS
-// ============================================================
-function setEl(id, html) {
+// =============================================
+function setV(id, val) {
   const el = document.getElementById(id);
-  if (el) el.innerHTML = html;
+  if (el) el.innerHTML = val;
 }
-
 function fmtDate(d) {
   try {
-    return new Date(d).toLocaleString('en-IN', {
-      day: '2-digit', month: 'short', year: 'numeric',
-      hour: '2-digit', minute: '2-digit'
+    return new Date(d).toLocaleString('en-IN',{
+      day:'2-digit',month:'short',year:'numeric',
+      hour:'2-digit',minute:'2-digit'
     });
-  } catch(e) { return String(d); }
+  } catch(e){ return String(d); }
 }
-
-function showTableLoading(show) {
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function showAlert(type, msg) {
+  setV('alertArea', `<div class="alert alert-${type}">${msg}</div>`);
+}
+function clearAlert() { setV('alertArea',''); }
+function showLoading(show) {
   document.getElementById('tableLoading').style.display = show ? 'block' : 'none';
   if (show) document.getElementById('tableWrap').style.display = 'none';
 }
-
-function showError(msg) {
-  const el = document.getElementById('tableError');
-  if (el) { el.innerHTML = msg; el.style.display = 'block'; }
-  document.getElementById('tableWrap').style.display = 'none';
-}
-
 function setStatus(color, text) {
-  const dots = { green: 'dot-green', red: 'dot-red', yellow: 'dot-yellow' };
-  document.getElementById('statusText').innerHTML =
-    `<span class="status-dot ${dots[color]}"></span>${text}`;
+  const map = {green:'dot-green', red:'dot-red', yellow:'dot-yellow'};
+  setV('statusText', `<span class="status-dot ${map[color]}"></span>${text}`);
 }
 
-// ============================================================
-// AUTO REFRESH EVERY 60 SECONDS
-// ============================================================
+// =============================================
+// AUTO REFRESH EVERY 60s
+// =============================================
 setInterval(() => {
-  if (sessionStorage.getItem('lihkaAdmin') === 'yes') loadData();
+  if (sessionStorage.getItem('lihkaAdmin') === '1') loadData();
 }, 60000);
 </script>
 </body>

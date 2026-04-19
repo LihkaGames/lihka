@@ -9,28 +9,27 @@ const ANALYTICS_URL = 'https://script.google.com/macros/s/AKfycbzXdAXXbOH73Kk6CG
 // ============================================
 async function getLocationData() {
   try {
-    const response = await fetch('https://ipapi.co/json/');
-    const data = await response.json();
+    const res = await fetch('https://ipapi.co/json/');
+    const d   = await res.json();
     return {
-      country: data.country_name || 'Unknown',
-      state:   data.region       || 'Unknown',
-      city:    data.city         || 'Unknown',
-      ip:      data.ip           || 'Unknown',
-      isp:     data.org          || 'Unknown'
+      country: d.country_name  || 'Unknown',
+      state:   d.region        || 'Unknown',
+      city:    d.city          || 'Unknown',
+      ip:      d.ip            || 'Unknown',
+      isp:     d.org           || 'Unknown'
     };
-  } catch (error) {
-    // Try backup API
+  } catch (e) {
     try {
       const r2 = await fetch('https://ip-api.com/json/');
       const d2 = await r2.json();
       return {
-        country: d2.country  || 'Unknown',
+        country: d2.country    || 'Unknown',
         state:   d2.regionName || 'Unknown',
-        city:    d2.city     || 'Unknown',
-        ip:      d2.query    || 'Unknown',
-        isp:     d2.isp      || 'Unknown'
+        city:    d2.city       || 'Unknown',
+        ip:      d2.query      || 'Unknown',
+        isp:     d2.isp        || 'Unknown'
       };
-    } catch(e) {
+    } catch (e2) {
       return {
         country: 'Unknown',
         state:   'Unknown',
@@ -47,31 +46,25 @@ async function getLocationData() {
 // ============================================
 function getDeviceType() {
   const ua = navigator.userAgent;
-  if (/tablet|ipad|playbook|silk/i.test(ua)) return 'Tablet';
-  if (/mobile|android|iphone|ipod|blackberry|opera mini|iemobile/i.test(ua)) return 'Mobile';
+  if (/tablet|ipad|playbook|silk/i.test(ua))                                          return 'Tablet';
+  if (/mobile|android|iphone|ipod|blackberry|opera mini|iemobile/i.test(ua))          return 'Mobile';
   return 'Desktop';
 }
 
 // ============================================
 // SEND DATA TO GOOGLE SHEETS
 // ============================================
-async function sendToSheet(payload) {
+function sendToSheet(payload) {
   try {
-    // Use Image beacon trick - works without CORS
-    const jsonStr = JSON.stringify(payload);
-    const encoded = encodeURIComponent(jsonStr);
-
-    // Method 1: fetch with no-cors (sends data, can't read response - but data saves)
     fetch(ANALYTICS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
+      method:  'POST',
+      mode:    'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: jsonStr
+      body:    JSON.stringify(payload)
     });
-
-    console.log('✅ Data sent:', payload.type, payload.item);
-  } catch (error) {
-    console.log('Send error:', error);
+    console.log('✅ Tracked:', payload.type, '-', payload.item);
+  } catch (err) {
+    console.warn('Tracking failed:', err);
   }
 }
 
@@ -79,27 +72,25 @@ async function sendToSheet(payload) {
 // TRACK PAGE VIEW
 // ============================================
 async function trackPageView() {
-  // Avoid tracking admin panel itself
   if (window.location.pathname.includes('admin')) return;
 
   try {
-    const location = await getLocationData();
-
-    await sendToSheet({
+    const loc = await getLocationData();
+    sendToSheet({
       type:      'visit',
       item:      document.title || window.location.pathname,
       page:      window.location.href,
-      country:   location.country,
-      state:     location.state,
-      city:      location.city,
-      ip:        location.ip,
-      isp:       location.isp,
+      country:   loc.country,
+      state:     loc.state,
+      city:      loc.city,
+      ip:        loc.ip,
+      isp:       loc.isp,
       device:    getDeviceType(),
       referrer:  document.referrer || 'Direct',
       userAgent: navigator.userAgent
     });
-  } catch (error) {
-    console.log('Page tracking error:', error);
+  } catch (err) {
+    console.warn('Page track error:', err);
   }
 }
 
@@ -108,36 +99,31 @@ async function trackPageView() {
 // ============================================
 async function trackDownload(appName, downloadUrl) {
   try {
-    const location = await getLocationData();
-
-    await sendToSheet({
+    const loc = await getLocationData();
+    sendToSheet({
       type:      'download',
       item:      appName,
       page:      window.location.href,
-      country:   location.country,
-      state:     location.state,
-      city:      location.city,
-      ip:        location.ip,
-      isp:       location.isp,
+      country:   loc.country,
+      state:     loc.state,
+      city:      loc.city,
+      ip:        loc.ip,
+      isp:       loc.isp,
       device:    getDeviceType(),
       referrer:  document.referrer || 'Direct',
       userAgent: navigator.userAgent
     });
-  } catch (error) {
-    console.log('Download tracking error:', error);
+  } catch (err) {
+    console.warn('Download track error:', err);
   }
 
-  // Always download even if tracking fails
+  // Always proceed with download
   if (downloadUrl) {
-    setTimeout(() => {
-      window.location.href = downloadUrl;
-    }, 600);
+    setTimeout(() => { window.location.href = downloadUrl; }, 600);
   }
 }
 
 // ============================================
 // AUTO TRACK ON PAGE LOAD
 // ============================================
-window.addEventListener('load', function() {
-  trackPageView();
-});
+window.addEventListener('load', trackPageView);
